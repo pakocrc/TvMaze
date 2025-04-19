@@ -6,43 +6,59 @@
 //
 
 import SwiftUI
-import WebKit
+import SwiftData
 
 struct ShowDetailsView: View {
+    @Environment(\.modelContext) private var modelContext
+    @Query private var favoriteShows: [TvMazeShow]
+
     @StateObject var viewModel: ShowDetailsViewModel
 
     var body: some View {
         ScrollView {
             VStack(alignment: .center) {
-                if let imageUrl = URL(string: viewModel.tvShow.image?.medium ?? "") {
-                    CachedAsyncImage(url: imageUrl)
-                        .frame(height: 400, alignment: .center)
-                }
+                CachedAsyncImage(stringUrl: viewModel.tvShow.image?.medium)
+                    .frame(height: 400, alignment: .center)
 
                 VStack(alignment: .center) {
 
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Text("Summary")
+                    HStack {
+                        if let average = viewModel.tvShow.rating?.average {
+                            Text("Rating:")
                                 .font(.body)
                                 .bold()
 
-                            Spacer()
-
-                            if let average = viewModel.tvShow.rating?.average {
-                                Text(String(viewModel.tvShow.rating?.average ?? 0.0))
-                                    .font(.body)
-                                    .foregroundStyle(average < 5.0 ? .red : .green)
-                                    .bold()
-                            }
+                            Text(String(average))
+                                .font(.body)
+                                .foregroundStyle(average < 5.0 ? .red : .green)
+                                .bold()
                         }
-                        .padding(.bottom)
+
+                        Spacer()
+
+                        Button {
+                            addShowToFavorites()
+                        } label: {
+                            Image(systemName: viewModel.tvShow.isFavorite || favoriteShows.contains(viewModel.tvShow) ? "star.fill" : "star")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 25, height: 25, alignment: .center)
+                                .foregroundColor(.yellow)
+                        }
+                    }
+                    .padding(.horizontal)
+
+                    VStack(alignment: .leading) {
+
+                        Text("Summary")
+                            .font(.body)
+                            .bold()
 
                         Text(viewModel.tvShow.summary ?? "")
                             .font(.body)
                         Divider()
                     }
-                    .padding(.horizontal)
+                    .padding([.top, .horizontal])
 
                     if let days = viewModel.tvShow.schedule?.days {
                         VStack(alignment: .leading) {
@@ -69,7 +85,7 @@ struct ShowDetailsView: View {
 
                             Divider()
                         }
-                        .padding(.horizontal)
+                        .padding([.top, .horizontal])
                     }
 
 
@@ -112,6 +128,22 @@ struct ShowDetailsView: View {
             }
         }
         .navigationTitle(viewModel.tvShow.name ?? "")
+    }
+
+    private func addShowToFavorites() {
+        if viewModel.tvShow.isFavorite {
+                modelContext.delete(viewModel.tvShow)
+        } else {
+            modelContext.insert(viewModel.tvShow)
+        }
+
+        do {
+            try modelContext.save()
+        } catch {
+            debugPrint("Error storing object: \(error)")
+        }
+
+        viewModel.tvShow.setFavorite()
     }
 }
 

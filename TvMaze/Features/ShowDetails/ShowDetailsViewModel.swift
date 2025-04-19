@@ -33,4 +33,8 @@ final class ShowDetailsViewModel: ObservableObject {
             }
         }
     }
+
+    func favoriteSelected() {
+        
+    }
 }

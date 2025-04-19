@@ -13,13 +13,11 @@ struct EpisodeDetailsView: View {
     var body: some View {
         ScrollView {
             VStack {
-                if let imageUrl = URL(string: viewModel.episode.image?.medium ?? "") {
-                    CachedAsyncImage(url: imageUrl)
-                        .frame(height: 300, alignment: .center)
-                }
+                CachedAsyncImage(stringUrl: viewModel.episode.image?.medium)
+                    .frame(height: 300, alignment: .center)
 
                 VStack(alignment: .leading) {
-                    HStack {
+                    HStack(alignment: .top) {
                         Text("\(viewModel.episode.number ?? 0).")
                         Text(viewModel.episode.name ?? "")
                     }
@@ -54,6 +52,7 @@ struct EpisodeDetailsView: View {
                 Spacer()
             }
         }
+        .scrollBounceBehavior(.basedOnSize)
     }
 }
 

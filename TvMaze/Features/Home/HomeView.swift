@@ -10,28 +10,18 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         TabView {
-            NavigationStack {
-                ShowCoordinatorView()
-                    .redirect(.showList)
-            }
-            .tabItem {
-                Label("Shows", systemImage: "play.rectangle")
-                    .symbolRenderingMode(.monochrome)
-                    .foregroundStyle(.primary)
-            }
-
-            NavigationStack {
-                Text("Favorites")
-            }
+            ShowCoordinatorView()
+                .redirect(.showList)
                 .tabItem {
-                    Label("Favorites", systemImage: "star")
+                    Label("Shows", systemImage: "play.rectangle")
                         .symbolRenderingMode(.monochrome)
                         .foregroundStyle(.primary)
                 }
 
-            Text("Settings")
+            FavoritesCoordinatorView()
+                .redirect(.favoritesList)
                 .tabItem {
-                    Label("Settings", systemImage: "gearshape")
+                    Label("Favorites", systemImage: "star")
                         .symbolRenderingMode(.monochrome)
                         .foregroundStyle(.primary)
                 }

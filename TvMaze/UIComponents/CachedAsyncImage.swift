@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct CachedAsyncImage: View {
-    let url: URL
+    let stringUrl: String?
 
     var body: some View {
 
-        if (ImageCache.shared.object(for: url.description)) != nil {
-            ImageCache.shared.object(for: url.description)!
+        if let image = ImageCache.shared.object(for: stringUrl ?? "") {
+            image
                 .resizable()
                 .scaledToFit()
                 .clipped()
@@ -21,7 +21,7 @@ struct CachedAsyncImage: View {
                 .padding(.horizontal)
 
         } else {
-            AsyncImage(url: url) { phase in
+            AsyncImage(url: URL(string: stringUrl ?? "")) { phase in
                 switch phase {
                     case .empty:
                         ProgressView()
@@ -32,8 +32,8 @@ struct CachedAsyncImage: View {
                             .resizable()
                             .scaledToFit()
                             .clipped()
-                            .clipShape(.rect(cornerRadius: 5))
-                            .padding()
+                            .clipShape(.rect(cornerRadius: 2))
+                            .padding(.horizontal)
                     default:
                         Image(systemName: "photo.fill")
                             .resizable()
@@ -51,5 +51,5 @@ struct CachedAsyncImage: View {
 }
 
 #Preview {
-    CachedAsyncImage(url: URL(string: "https://static.tvmaze.com/uploads/images/medium_portrait/544/1362267.jpg")!)
+    CachedAsyncImage(stringUrl: "https://static.tvmaze.com/uploads/images/medium_portrait/544/1362267.jpg")
 }

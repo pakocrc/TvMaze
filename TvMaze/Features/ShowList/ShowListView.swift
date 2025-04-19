@@ -15,7 +15,9 @@ struct ShowListView: View {
             LazyVStack {
                 if viewModel.isSearching {
                     ForEach(viewModel.searchTvShowList) { show in
-                        NavigationLink(value: show) {
+                        Button {
+                            viewModel.coordinator.navigateToDetail(tvShow: show)
+                        } label: {
                             ShowRowView(show: show)
                                 .frame(height: 200, alignment: .center)
                                 .task {
@@ -34,7 +36,9 @@ struct ShowListView: View {
 
                 } else {
                     ForEach(viewModel.tvShowList) { show in
-                        NavigationLink(value: show) {
+                        Button {
+                            viewModel.coordinator.navigateToDetail(tvShow: show)
+                        } label: {
                             ShowRowView(show: show)
                                 .frame(height: 200, alignment: .center)
                                 .task {
@@ -59,12 +63,10 @@ struct ShowListView: View {
         .searchable(text: $viewModel.searchCriteria,
                     isPresented: $viewModel.isSearching)
         .navigationTitle("TvMaze")
-        .navigationDestination(for: TvMazeShow.self) { show in
-            ShowDetailsView(viewModel: ShowDetailsViewModel(tvShow: show))
-        }
+        .applyNavigation(coordinator: viewModel.coordinator)
     }
 }
 
 #Preview {
-    ShowListView(viewModel: ShowListViewModel())
+    ShowListView(viewModel: ShowListViewModel(coordinator: ShowCoordinatorView()))
 }

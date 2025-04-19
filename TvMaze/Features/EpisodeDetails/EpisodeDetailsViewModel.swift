@@ -10,7 +10,10 @@ import Foundation
 final class EpisodeDetailsViewModel: ObservableObject {
     @Published var episode: TvMazeEpisode
 
-    init(episode: TvMazeEpisode) {
+    let coordinator: ShowCoordinatorView
+
+    init(episode: TvMazeEpisode, coordinator: ShowCoordinatorView) {
         self.episode = episode
+        self.coordinator = coordinator
     }
 }

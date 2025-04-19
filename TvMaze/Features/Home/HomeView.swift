@@ -7,17 +7,12 @@
 
 import SwiftUI
 
-//enum ShowNavigationPath {
-//    case
-//}
-
 struct HomeView: View {
-    @StateObject var viewModel: HomeViewModel
-
     var body: some View {
         TabView {
             NavigationStack {
-                ShowListView(viewModel: ShowListViewModel())
+                ShowCoordinatorView()
+                    .redirect(.showList)
             }
             .tabItem {
                 Label("Shows", systemImage: "play.rectangle")
@@ -45,5 +40,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView(viewModel: HomeViewModel())
+    HomeView()
 }

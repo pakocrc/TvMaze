@@ -11,9 +11,11 @@ final class ShowDetailsViewModel: ObservableObject {
     @Published var seasons = [TvMazeSeason]()
 
     let tvShow: TvMazeShow
+    let coordinator: ShowCoordinatorView
 
-    init(tvShow: TvMazeShow) {
+    init(tvShow: TvMazeShow, coordinator: ShowCoordinatorView) {
         self.tvShow = tvShow
+        self.coordinator = coordinator
 
         Task {
             await fetchEpisodeList()
@@ -24,12 +26,7 @@ final class ShowDetailsViewModel: ObservableObject {
     func fetchEpisodeList() {
         Task {
             do {
-#if !DEBUG
-                self.seasons = try await TvMazeStore.shared.getMockSeasons()
-
-#else
                 self.seasons = try await NetworkManager.shared.fetchSeasonList(showId: String(self.tvShow.id))
-#endif
 
             } catch let error {
                 debugPrint(error.localizedDescription)

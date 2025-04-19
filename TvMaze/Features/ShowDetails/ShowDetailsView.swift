@@ -89,9 +89,9 @@ struct ShowDetailsView: View {
                         .padding([.top, .horizontal])
                     }
 
-                    NavigationLink {
-                        ShowEpisodesView(viewModel: ShowEpisodesViewModel(tvShow: viewModel.tvShow,
-                                                                          seasons: viewModel.seasons))
+                    Button {
+                        viewModel.coordinator.navigateToEpisodes(tvShow: viewModel.tvShow,
+                                                                 seasons: viewModel.seasons)
                     } label: {
                         HStack {
                             Text("Seasons")
@@ -116,5 +116,5 @@ struct ShowDetailsView: View {
 }
 
 #Preview {
-    ShowDetailsView(viewModel: ShowDetailsViewModel(tvShow: TvMazeStore.shared.getTvShow()))
+    ShowDetailsView(viewModel: ShowDetailsViewModel(tvShow: TvMazeStore.shared.getTvShow(), coordinator: ShowCoordinatorView()))
 }

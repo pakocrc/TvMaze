@@ -10,9 +10,10 @@ import SwiftData
 
 @main
 struct TvMazeApp: App {
+
     var body: some Scene {
         WindowGroup {
-            HomeView(viewModel: HomeViewModel())
+            HomeView()
         }
 //        .modelContainer(sharedModelContainer)
     }

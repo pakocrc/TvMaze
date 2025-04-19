@@ -18,7 +18,11 @@ final class ShowListViewModel: ObservableObject {
     private var page = 0
     private var cancellables = Set<AnyCancellable>()
 
-    init() {
+    let coordinator: ShowCoordinatorView
+
+    init(coordinator: ShowCoordinatorView) {
+        self.coordinator = coordinator
+
         Task {
             await fetchShowsList()
         }
@@ -65,14 +69,10 @@ final class ShowListViewModel: ObservableObject {
     func fetchShowsList() {
         Task {
             do {
-#if !DEBUG
-                self.tvShowList = try await TvMazeStore.shared.getMockTvShows()
-#else
                 let newTvShows = try await NetworkManager.shared.fetchShowsList(page: self.page)
                 self.tvShowList.append(contentsOf: newTvShows)
                 self.currentLastItem = self.tvShowList.last
                 self.page += 1
-#endif
 
             } catch let error {
                 debugPrint(error.localizedDescription)

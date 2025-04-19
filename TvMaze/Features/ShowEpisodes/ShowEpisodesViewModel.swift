@@ -13,10 +13,12 @@ final class ShowEpisodesViewModel: ObservableObject {
 
     let tvShow: TvMazeShow
     let seasons: [TvMazeSeason]
+    let coordinator: ShowCoordinatorView
 
-    init(tvShow: TvMazeShow, seasons: [TvMazeSeason]) {
+    init(tvShow: TvMazeShow, seasons: [TvMazeSeason], coordinator: ShowCoordinatorView) {
         self.tvShow = tvShow
         self.seasons = seasons
+        self.coordinator = coordinator
 
         Task {
             await fetchEpisodeList()
@@ -27,11 +29,7 @@ final class ShowEpisodesViewModel: ObservableObject {
     func fetchEpisodeList() {
         Task {
             do {
-#if !DEBUG
-                let episodes = try await TvMazeStore.shared.getMockEpisodes()
-#else
                 let episodes = try await NetworkManager.shared.fetchEpisodeList(showId: String(self.tvShow.id))
-#endif
 
                 self.seasonEpisodes = self.seasons.map({ season in
                     return TvMaseSeasonEpisodes(season: season, episodes: episodes.filter({ $0.season == season.number }))

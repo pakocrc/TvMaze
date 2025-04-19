@@ -25,18 +25,27 @@ TvMaze app
 
 Bonus (Optional)
 
-● Allow the user to set a PIN number to secure the application and prevent unauthorized users.
-● For supported phones, the user must be able to choose if they want to enable fingerprint authentication to avoid typing the PIN number while opening the app.
-● Allow the user to save a series as a favorite.
-● Allow the user to delete a series from the favorites list.
-● Allow the user to browse their favorite series in alphabetical order, and click on one to see its details.
-● Create a people search by listing the name and image of the person.
-● After clicking on a person, the application should show the details of that person, such as:
+● Allow the user to set a PIN number to secure the application and prevent unauthorized users. ❌ Not implemented due to time limitations
+
+● For supported phones, the user must be able to choose if they want to enable fingerprint authentication to avoid typing the PIN number while opening the app. ❌ Not implemented due to time limitations
+
+● Allow the user to save a series as a favorite. ✅
+
+● Allow the user to delete a series from the favorites list. ✅
+
+● Allow the user to browse their favorite series in alphabetical order, and click on one to see its details. ❌ Not implemented due to time limitations
+
+● Create a people search by listing the name and image of the person. ❌ Not implemented due to time limitations
+
+● After clicking on a person, the application should show the details of that person, such as: ❌ Not implemented due to time limitations
+
     ○ Name
     ○ Image
     ○ Series they have participated in, with a link to the series details.
 
 
+Aditional bonus features included:
 
-Infinite scroll
-Image Cache
+● Infinite scroll ✅
+
+● Image Cache ✅

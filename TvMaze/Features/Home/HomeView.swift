@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+//enum ShowNavigationPath {
+//    case
+//}
+
 struct HomeView: View {
     @StateObject var viewModel: HomeViewModel
 

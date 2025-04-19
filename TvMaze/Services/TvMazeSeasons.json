@@ -1,0 +1,242 @@
+[
+    {
+        "id": 141,
+        "url": "https://www.tvmaze.com/seasons/141/outlander-season-1",
+        "number": 1,
+        "name": "",
+        "episodeOrder": 16,
+        "premiereDate": "2014-08-09",
+        "endDate": "2015-05-30",
+        "network": {
+            "id": 17,
+            "name": "STARZ",
+            "country": {
+                "name": "United States",
+                "code": "US",
+                "timezone": "America/New_York"
+            },
+            "officialSite": "https://www.starz.com/us/en/"
+        },
+        "webChannel": null,
+        "image": {
+            "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/10/26525.jpg",
+            "original": "https://static.tvmaze.com/uploads/images/original_untouched/10/26525.jpg"
+        },
+        "summary": "<p>Book One sees Claire Randall, a married combat nurse from 1945, mysteriously swept back in time to 1743. Upon her arrival, she is immediately thrown into an unknown world where her life is threatened. But when she is forced to marry Jamie Fraser, a chivalrous and romantic young Scottish warrior, a passionate relationship is ignited. Now, Claire's heart is torn between two vastly different men in two irreconcilable lives.</p>",
+        "_links": {
+            "self": {
+                "href": "https://api.tvmaze.com/seasons/141"
+            }
+        }
+    },
+    {
+        "id": 35254,
+        "url": "https://www.tvmaze.com/seasons/35254/outlander-season-2",
+        "number": 2,
+        "name": "",
+        "episodeOrder": 13,
+        "premiereDate": "2016-04-09",
+        "endDate": "2016-07-09",
+        "network": {
+            "id": 17,
+            "name": "STARZ",
+            "country": {
+                "name": "United States",
+                "code": "US",
+                "timezone": "America/New_York"
+            },
+            "officialSite": "https://www.starz.com/us/en/"
+        },
+        "webChannel": null,
+        "image": {
+            "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/223/558329.jpg",
+            "original": "https://static.tvmaze.com/uploads/images/original_untouched/223/558329.jpg"
+        },
+        "summary": "<p>Season 2 begins as Claire and Jamie arrives in France, hell-bent on infiltrating the Jacobite rebellion and stopping the battle of Culloden. Thrown into the lavish world of French society, where intrigue and parties are abundant, Jamie and Claire struggle to advance their political agenda. They must race to prevent a doomed Highland uprising, and the extinction of Scottish life.</p>",
+        "_links": {
+            "self": {
+                "href": "https://api.tvmaze.com/seasons/35254"
+            }
+        }
+    },
+    {
+        "id": 61925,
+        "url": "https://www.tvmaze.com/seasons/61925/outlander-season-3",
+        "number": 3,
+        "name": "",
+        "episodeOrder": 13,
+        "premiereDate": "2017-09-10",
+        "endDate": "2017-12-10",
+        "network": {
+            "id": 17,
+            "name": "STARZ",
+            "country": {
+                "name": "United States",
+                "code": "US",
+                "timezone": "America/New_York"
+            },
+            "officialSite": "https://www.starz.com/us/en/"
+        },
+        "webChannel": null,
+        "image": {
+            "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/223/558330.jpg",
+            "original": "https://static.tvmaze.com/uploads/images/original_untouched/223/558330.jpg"
+        },
+        "summary": "<p>Separated by continents and centuries, Claire and Jamie must find their way back to each other. As always, adversity, mystery, and adventure await them on the path to reunion. And the question remains: When they find each other, will they be the same people who parted at the standing stones, all those years ago?</p>",
+        "_links": {
+            "self": {
+                "href": "https://api.tvmaze.com/seasons/61925"
+            }
+        }
+    },
+    {
+        "id": 76585,
+        "url": "https://www.tvmaze.com/seasons/76585/outlander-season-4",
+        "number": 4,
+        "name": "",
+        "episodeOrder": 13,
+        "premiereDate": "2018-11-04",
+        "endDate": "2019-01-27",
+        "network": {
+            "id": 17,
+            "name": "STARZ",
+            "country": {
+                "name": "United States",
+                "code": "US",
+                "timezone": "America/New_York"
+            },
+            "officialSite": "https://www.starz.com/us/en/"
+        },
+        "webChannel": null,
+        "image": {
+            "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/223/558331.jpg",
+            "original": "https://static.tvmaze.com/uploads/images/original_untouched/223/558331.jpg"
+        },
+        "summary": "<p>Season 4 picks up from where Season 3 ended and will draw from the novel <i>Drums of Autumn</i>, in which the time-traveling 20th century doctor Claire and her 18th century Highlander husband Jamie try to make a home for themselves in colonial America. Along the way, the Frasers cross paths with notorious pirate and smuggler Stephen Bonnet in a fateful meeting that will come back to haunt the Fraser family.</p>",
+        "_links": {
+            "self": {
+                "href": "https://api.tvmaze.com/seasons/76585"
+            }
+        }
+    },
+    {
+        "id": 84934,
+        "url": "https://www.tvmaze.com/seasons/84934/outlander-season-5",
+        "number": 5,
+        "name": "",
+        "episodeOrder": 12,
+        "premiereDate": "2020-02-16",
+        "endDate": "2020-05-10",
+        "network": {
+            "id": 17,
+            "name": "STARZ",
+            "country": {
+                "name": "United States",
+                "code": "US",
+                "timezone": "America/New_York"
+            },
+            "officialSite": "https://www.starz.com/us/en/"
+        },
+        "webChannel": null,
+        "image": {
+            "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/256/640176.jpg",
+            "original": "https://static.tvmaze.com/uploads/images/original_untouched/256/640176.jpg"
+        },
+        "summary": "<p>Book Five finds the Frasers fighting for their family and the home they have forged on Fraser's Ridge. Jamie must find a way to defend all that he has created in America, while hiding his personal relationship with Murtagh Fitzgibbons, the man whom Governor William Tryon has ordered him to hunt down and kill. With her family together at last, Claire Fraser must use her modern medical knowledge and foresight to prevent them from being ripped apart once again.</p>",
+        "_links": {
+            "self": {
+                "href": "https://api.tvmaze.com/seasons/84934"
+            }
+        }
+    },
+    {
+        "id": 84935,
+        "url": "https://www.tvmaze.com/seasons/84935/outlander-season-6",
+        "number": 6,
+        "name": "",
+        "episodeOrder": 8,
+        "premiereDate": "2022-03-06",
+        "endDate": "2022-05-01",
+        "network": {
+            "id": 17,
+            "name": "STARZ",
+            "country": {
+                "name": "United States",
+                "code": "US",
+                "timezone": "America/New_York"
+            },
+            "officialSite": "https://www.starz.com/us/en/"
+        },
+        "webChannel": null,
+        "image": {
+            "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/398/996801.jpg",
+            "original": "https://static.tvmaze.com/uploads/images/original_untouched/398/996801.jpg"
+        },
+        "summary": "<p>The sixth season of \"Outlander\" sees a continuation of Claire and Jamie's fight to protect those they love, as they navigate the trials and tribulations of life in colonial America.</p>",
+        "_links": {
+            "self": {
+                "href": "https://api.tvmaze.com/seasons/84935"
+            }
+        }
+    },
+    {
+        "id": 121514,
+        "url": "https://www.tvmaze.com/seasons/121514/outlander-season-7",
+        "number": 7,
+        "name": "",
+        "episodeOrder": 16,
+        "premiereDate": "2023-06-16",
+        "endDate": "2025-01-17",
+        "network": {
+            "id": 17,
+            "name": "STARZ",
+            "country": {
+                "name": "United States",
+                "code": "US",
+                "timezone": "America/New_York"
+            },
+            "officialSite": "https://www.starz.com/us/en/"
+        },
+        "webChannel": null,
+        "image": {
+            "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/436/1091442.jpg",
+            "original": "https://static.tvmaze.com/uploads/images/original_untouched/436/1091442.jpg"
+        },
+        "summary": "<p>Season seven picks up from the harrowing events of the end of season six, with Jamie and Young Ian racing to rescue Claire before she's tried and wrongfully convicted for the murder of Malva Christie. But their mission is complicated by the beginning of a geopolitical firestorm: The American Revolution has arrived. In the seventh season of <i>Outlander</i> Jamie, Claire, and their family are caught in the violent birth pains of an emerging nation as armies march to war and British institutions crumble in the face of armed rebellion. The land the Frasers call home is changing - and they must change with it. In order to protect what they've built, the Frasers have to navigate the perils of the Revolutionary War. They learn that sometimes to defend what you love, you have to leave it behind. As the conflict draws them out of North Carolina and into the heart of this fight for independence, Jamie, Claire, Brianna, and Roger are faced with impossible decisions that have the potential to tear their family apart.</p>",
+        "_links": {
+            "self": {
+                "href": "https://api.tvmaze.com/seasons/121514"
+            }
+        }
+    },
+    {
+        "id": 147933,
+        "url": "https://www.tvmaze.com/seasons/147933/outlander-season-8",
+        "number": 8,
+        "name": "",
+        "episodeOrder": 10,
+        "premiereDate": null,
+        "endDate": null,
+        "network": {
+            "id": 17,
+            "name": "STARZ",
+            "country": {
+                "name": "United States",
+                "code": "US",
+                "timezone": "America/New_York"
+            },
+            "officialSite": "https://www.starz.com/us/en/"
+        },
+        "webChannel": null,
+        "image": {
+            "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/465/1163287.jpg",
+            "original": "https://static.tvmaze.com/uploads/images/original_untouched/465/1163287.jpg"
+        },
+        "summary": null,
+        "_links": {
+            "self": {
+                "href": "https://api.tvmaze.com/seasons/147933"
+            }
+        }
+    }
+]

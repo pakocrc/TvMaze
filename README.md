@@ -1,8 +1,6 @@
 # TvMaze
 TvMaze app
 
-iOS Challenge
-
 ● List all of the series contained in the API used by the paging scheme provided by the API. ✅
 ● After clicking on a series, the application should show the details of the series, showing the following information:
     ○ Name

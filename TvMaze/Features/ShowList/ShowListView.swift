@@ -9,37 +9,58 @@ import SwiftUI
 
 struct ShowListView: View {
     @StateObject var viewModel: ShowListViewModel
-    @State var searchText: String = ""
 
     var body: some View {
         ScrollView {
             LazyVStack {
-                ForEach(viewModel.tvShowList) { show in
-                    NavigationLink(value: show) {
-                        ShowRowView(show: show)
-                            .frame(height: 200, alignment: .center)
-                            .task {
-                                if show == viewModel.currentLastItem {
-                                    Task {
-                                        viewModel.fetchShowsList()
+                if viewModel.isSearching {
+                    ForEach(viewModel.searchTvShowList) { show in
+                        NavigationLink(value: show) {
+                            ShowRowView(show: show)
+                                .frame(height: 200, alignment: .center)
+                                .task {
+                                    if show == viewModel.currentLastItem {
+                                        Task {
+                                            viewModel.fetchShowsList()
+                                        }
                                     }
                                 }
-                            }
-                    }
-                    .foregroundStyle(.primary)
+                        }
+                        .foregroundStyle(.primary)
 
-                    Divider()
-                        .padding(.horizontal)
+                        Divider()
+                            .padding(.horizontal)
+                    }
+
+                } else {
+                    ForEach(viewModel.tvShowList) { show in
+                        NavigationLink(value: show) {
+                            ShowRowView(show: show)
+                                .frame(height: 200, alignment: .center)
+                                .task {
+                                    if show == viewModel.currentLastItem {
+                                        Task {
+                                            viewModel.fetchShowsList()
+                                        }
+                                    }
+                                }
+                        }
+                        .foregroundStyle(.primary)
+
+                        Divider()
+                            .padding(.horizontal)
+                    }
                 }
             }
         }
         .searchPresentationToolbarBehavior(.automatic)
         .scrollTargetLayout()
         .scrollTargetBehavior(.viewAligned)
-        .searchable(text: $searchText)
+        .searchable(text: $viewModel.searchCriteria,
+                    isPresented: $viewModel.isSearching)
         .navigationTitle("TvMaze")
-        .navigationDestination(for: TvShow.self) { show in
-            ShowDetailsView(show: show)
+        .navigationDestination(for: TvMazeShow.self) { show in
+            ShowDetailsView(viewModel: ShowDetailsViewModel(tvShow: show))
         }
     }
 }

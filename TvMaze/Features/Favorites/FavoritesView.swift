@@ -22,10 +22,14 @@ struct FavoritesView: View {
             } else {
                 VStack {
                     ForEach(favoriteShows) { show in
-                        ShowRowView(show: show)
-                            .frame(height: 200, alignment: .center)
-                            .foregroundStyle(.primary)
-
+                        Button {
+                            viewModel.coordinator.navigateToDetail(tvShow: show)
+                        } label: {
+                            ShowRowView(show: show)
+                                .frame(height: 200, alignment: .center)
+                        }
+                        .foregroundStyle(.primary)
+                        
                         Divider()
                             .padding(.horizontal)
                     }
@@ -40,6 +44,6 @@ struct FavoritesView: View {
 }
 
 #Preview {
-    FavoritesView(viewModel: FavoritesViewModel(coordinator: FavoritesCoordinatorView()))
+    FavoritesView(viewModel: FavoritesViewModel(coordinator: ShowCoordinatorView()))
         .modelContainer(for: TvMazeShow.self, inMemory: true)
 }

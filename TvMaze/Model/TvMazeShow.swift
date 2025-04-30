@@ -10,30 +10,31 @@ import SwiftData
 
 @Model
 class TvMazeShow: Identifiable {
-    let id: Int
-    let url: String?
-    let name: String?
-    let type: String?
-    let language: String?
-    let genres: [String]?
-    let status: String?
-    let runtime: Int?
-    let averageRuntime: Int?
-    let premiered: String?
-    let ended: String?
-    let officialSite: String?
-    let schedule: TvMazeSchedule?
-    let rating: TvMazeRating?
-    let weight: Int?
+    var id = UUID()
+    var showId: Int
+    var url: String?
+    var name: String?
+    var type: String?
+    var language: String?
+    var genres: [String]?
+    var status: String?
+    var runtime: Int?
+    var averageRuntime: Int?
+    var premiered: String?
+    var ended: String?
+    var officialSite: String?
+    var schedule: TvMazeSchedule?
+    var rating: TvMazeRating?
+    var weight: Int?
 //    let network: TvMazeNetwork?
-    let webChannel: TvMazeNetwork?
-    let image: TvMazeImage?
+    var webChannel: TvMazeNetwork?
+    var image: TvMazeImage?
     var summary: String?
-    let updated: Int?
+    var updated: Int?
     var isFavorite: Bool
 
-    init(id: Int, url: String?, name: String?, type: String?, language: String?, genres: [String]?, status: String?, runtime: Int?, averageRuntime: Int?, premiered: String?, ended: String?, officialSite: String?, schedule: TvMazeSchedule?, rating: TvMazeRating?, weight: Int?, image: TvMazeImage?, summary: String? = nil, updated: Int?) {
-        self.id = id
+    init(showId: Int, url: String?, name: String?, type: String?, language: String?, genres: [String]?, status: String?, runtime: Int?, averageRuntime: Int?, premiered: String?, ended: String?, officialSite: String?, schedule: TvMazeSchedule?, rating: TvMazeRating?, weight: Int?, image: TvMazeImage?, summary: String? = nil, updated: Int?) {
+        self.showId = showId
         self.url = url
         self.name = name
         self.type = type
@@ -49,14 +50,14 @@ class TvMazeShow: Identifiable {
         self.rating = rating
         self.weight = weight
         self.image = image
-        self.summary = summary
+        self.summary = summary?.htmlToString()
         self.updated = updated
         self.isFavorite = false
     }
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        id = try container.decode(Int.self, forKey: .id)
+        showId = try container.decode(Int.self, forKey: .id)
         url = try container.decodeIfPresent(String.self, forKey: .url)
         name = try container.decodeIfPresent(String.self, forKey: .name)
         type = try container.decodeIfPresent(String.self, forKey: .type)
@@ -99,7 +100,7 @@ extension TvMazeShow: Codable {
 
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(id, forKey: .id)
+        try container.encode(showId, forKey: .id)
         try container.encodeIfPresent(url, forKey: .url)
         try container.encodeIfPresent(name, forKey: .name)
         try container.encodeIfPresent(type, forKey: .type)

@@ -1,0 +1,305 @@
+[
+    {
+        "score": 0.91244227,
+        "show": {
+            "id": 43,
+            "url": "https://www.tvmaze.com/shows/43/outlander",
+            "name": "Outlander",
+            "type": "Scripted",
+            "language": "English",
+            "genres": [
+                "Adventure",
+                "Romance",
+                "Science-Fiction"
+            ],
+            "status": "Running",
+            "runtime": 60,
+            "averageRuntime": 61,
+            "premiered": "2014-08-09",
+            "ended": null,
+            "officialSite": "https://www.starz.com/us/en/series/outlander/21796",
+            "schedule": {
+                "time": "20:00",
+                "days": [
+                    "Friday"
+                ]
+            },
+            "rating": {
+                "average": 7.9
+            },
+            "weight": 99,
+            "network": {
+                "id": 17,
+                "name": "STARZ",
+                "country": {
+                    "name": "United States",
+                    "code": "US",
+                    "timezone": "America/New_York"
+                },
+                "officialSite": "https://www.starz.com/us/en/"
+            },
+            "webChannel": null,
+            "dvdCountry": null,
+            "externals": {
+                "tvrage": 36202,
+                "thetvdb": 270408,
+                "imdb": "tt3006802"
+            },
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/544/1362267.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/544/1362267.jpg"
+            },
+            "summary": "<p><b>Outlander </b>follows the story of Claire Randall, a married combat nurse from 1945 who is mysteriously swept back in time to 1743, where she is immediately thrown into an unknown world where her life is threatened. When she is forced to marry Jamie, a chivalrous and romantic young Scottish warrior, a passionate affair is ignited that tears Claire's heart between two vastly different men in two irreconcilable lives.</p><p>The <i>Outlander</i> series, adapted from Diana Gabaldon's international best-selling books, spans the genres of romance, science fiction, history and adventure into one epic tale.</p>",
+            "updated": 1737502204,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/shows/43"
+                },
+                "previousepisode": {
+                    "href": "https://api.tvmaze.com/episodes/3049195",
+                    "name": "A Hundred Thousand Angels"
+                }
+            }
+        }
+    },
+    {
+        "score": 0.5211992,
+        "show": {
+            "id": 63386,
+            "url": "https://www.tvmaze.com/shows/63386/outlander-blood-of-my-blood",
+            "name": "Outlander: Blood of My Blood",
+            "type": "Scripted",
+            "language": "English",
+            "genres": [
+                "Adventure",
+                "Romance"
+            ],
+            "status": "In Development",
+            "runtime": 60,
+            "averageRuntime": 60,
+            "premiered": "2025-08-08",
+            "ended": null,
+            "officialSite": "https://www.starz.com/series/outlander-blood-of-my-blood/69342",
+            "schedule": {
+                "time": "20:00",
+                "days": [
+                    "Friday"
+                ]
+            },
+            "rating": {
+                "average": null
+            },
+            "weight": 98,
+            "network": {
+                "id": 17,
+                "name": "STARZ",
+                "country": {
+                    "name": "United States",
+                    "code": "US",
+                    "timezone": "America/New_York"
+                },
+                "officialSite": "https://www.starz.com/us/en/"
+            },
+            "webChannel": null,
+            "dvdCountry": null,
+            "externals": {
+                "tvrage": null,
+                "thetvdb": 429964,
+                "imdb": null
+            },
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/564/1410723.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/564/1410723.jpg"
+            },
+            "summary": "<p><b>Outlander: Blood of My Blood</b> explores the lives and relationship of Claire's parents, Julia Moriston and Henry Beauchamp, and Jamie's parents, Ellen MacKenzie and Brian Fraser. The series centers on these two parallel love stories set in two different time periods, with Jamie's parents in the early 18th-century Scottish Highlands and Claire's parents in WWI England.</p>",
+            "updated": 1744934049,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/shows/63386"
+                },
+                "nextepisode": {
+                    "href": "https://api.tvmaze.com/episodes/3209787",
+                    "name": "TBA"
+                }
+            }
+        }
+    },
+    {
+        "score": 0.5129796,
+        "show": {
+            "id": 49839,
+            "url": "https://www.tvmaze.com/shows/49839/outlander-end-of-summer",
+            "name": "Outlander: End of Summer",
+            "type": "Documentary",
+            "language": "English",
+            "genres": [],
+            "status": "Ended",
+            "runtime": 15,
+            "averageRuntime": 15,
+            "premiered": "2020-08-23",
+            "ended": "2020-09-13",
+            "officialSite": "https://www.facebook.com/TheOutlanderCollector/",
+            "schedule": {
+                "time": "",
+                "days": [
+                    "Sunday"
+                ]
+            },
+            "rating": {
+                "average": null
+            },
+            "weight": 38,
+            "network": null,
+            "webChannel": {
+                "id": 202,
+                "name": "Facebook Watch",
+                "country": null,
+                "officialSite": "https://www.facebook.com/watch"
+            },
+            "dvdCountry": null,
+            "externals": {
+                "tvrage": null,
+                "thetvdb": null,
+                "imdb": null
+            },
+            "image": null,
+            "summary": "<p>The <b>End of Summer</b> series is being released in support of Doctors Without Borders, an international humanitarian aid organization working in over 70 countries around the world. Viewers at home will be able to use Facebook's donate feature to contribute to the non-profit's lifesaving medical humanitarian work.</p>",
+            "updated": 1682868016,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/shows/49839"
+                },
+                "previousepisode": {
+                    "href": "https://api.tvmaze.com/episodes/1917677",
+                    "name": "Catch Up with Caitriona and Sam"
+                }
+            }
+        }
+    },
+    {
+        "score": 0.3643321,
+        "show": {
+            "id": 9038,
+            "url": "https://www.tvmaze.com/shows/9038/outland",
+            "name": "Outland",
+            "type": "Scripted",
+            "language": "English",
+            "genres": [
+                "Comedy"
+            ],
+            "status": "Ended",
+            "runtime": 30,
+            "averageRuntime": 30,
+            "premiered": "2012-02-08",
+            "ended": "2012-03-14",
+            "officialSite": "http://www.abc.net.au/tv/outland/",
+            "schedule": {
+                "time": "20:30",
+                "days": [
+                    "Wednesday"
+                ]
+            },
+            "rating": {
+                "average": null
+            },
+            "weight": 40,
+            "network": {
+                "id": 114,
+                "name": "ABC",
+                "country": {
+                    "name": "Australia",
+                    "code": "AU",
+                    "timezone": "Australia/Sydney"
+                },
+                "officialSite": "https://www.abc.net.au/"
+            },
+            "webChannel": null,
+            "dvdCountry": null,
+            "externals": {
+                "tvrage": 30937,
+                "thetvdb": 255264,
+                "imdb": "tt1802360"
+            },
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/31/79955.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/31/79955.jpg"
+            },
+            "summary": "<p>Join openly gay but closeted geeks, Toby, Rae, Andy, Fab and Max as their lives, loves and never-ending dramas play out with hilarious consequences. Outland is a show about belonging, no matter who you are, and how everyone searches to find a place to fit in.</p>",
+            "updated": 1704794735,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/shows/9038"
+                },
+                "previousepisode": {
+                    "href": "https://api.tvmaze.com/episodes/490264",
+                    "name": "Pride"
+                }
+            }
+        }
+    },
+    {
+        "score": 0.24284926,
+        "show": {
+            "id": 76640,
+            "url": "https://www.tvmaze.com/shows/76640/outland",
+            "name": "Outland",
+            "type": "Scripted",
+            "language": "Chinese",
+            "genres": [
+                "Crime",
+                "Mystery"
+            ],
+            "status": "In Development",
+            "runtime": null,
+            "averageRuntime": null,
+            "premiered": null,
+            "ended": null,
+            "officialSite": null,
+            "schedule": {
+                "time": "",
+                "days": []
+            },
+            "rating": {
+                "average": null
+            },
+            "weight": 4,
+            "network": {
+                "id": 276,
+                "name": "Hunan TV",
+                "country": {
+                    "name": "China",
+                    "code": "CN",
+                    "timezone": "Asia/Shanghai"
+                },
+                "officialSite": null
+            },
+            "webChannel": {
+                "id": 226,
+                "name": "Mango TV",
+                "country": {
+                    "name": "China",
+                    "code": "CN",
+                    "timezone": "Asia/Shanghai"
+                },
+                "officialSite": "https://w.mgtv.com/"
+            },
+            "dvdCountry": null,
+            "externals": {
+                "tvrage": null,
+                "thetvdb": null,
+                "imdb": null
+            },
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/517/1294060.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/517/1294060.jpg"
+            },
+            "summary": null,
+            "updated": 1714850153,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/shows/76640"
+                }
+            }
+        }
+    }
+]

@@ -1,0 +1,6 @@
+{
+    "name": "Bad Request",
+    "message": "Invalid value for page",
+    "code": 0,
+    "status": 400
+}

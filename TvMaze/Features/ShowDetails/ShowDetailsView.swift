@@ -14,11 +14,19 @@ struct ShowDetailsView: View {
 
     @StateObject var viewModel: ShowDetailsViewModel
 
+    @Namespace private var namespace
+
     var body: some View {
         ScrollView {
             VStack(alignment: .center) {
-                CachedAsyncImage(stringUrl: viewModel.tvShow.image?.medium)
+                CachedAsyncImage(stringUrl: viewModel.tvShow.image?.medium ?? "")
                     .frame(height: 400, alignment: .center)
+                    .onTapGesture {
+                        viewModel.isPresentingImageFullView.toggle()
+                    }
+                    .sheet(isPresented: $viewModel.isPresentingImageFullView) {
+                        ImageFullView(title: viewModel.tvShow.name ?? "", imageUrl: viewModel.tvShow.image?.original ?? "")
+                    }
 
                 VStack(alignment: .center) {
 
@@ -122,6 +130,23 @@ struct ShowDetailsView: View {
                     }
                     .foregroundStyle(.primary)
                     .padding()
+
+                    Button {
+                        viewModel.coordinator.navigateToCast(tvShow: viewModel.tvShow)
+                    } label: {
+                        HStack {
+                            Text("Cast")
+                                .font(.headline)
+                                .bold()
+                                .foregroundStyle(.primary)
+
+                            Spacer()
+                            
+                            Image(systemName: "chevron.right")
+                        }
+                    }
+                    .foregroundStyle(.primary)
+                    .padding()
                 }
 
                 Spacer()
@@ -132,7 +157,7 @@ struct ShowDetailsView: View {
 
     private func addShowToFavorites() {
         if viewModel.tvShow.isFavorite {
-                modelContext.delete(viewModel.tvShow)
+            modelContext.delete(viewModel.tvShow)
         } else {
             modelContext.insert(viewModel.tvShow)
         }
@@ -148,5 +173,7 @@ struct ShowDetailsView: View {
 }
 
 #Preview {
-    ShowDetailsView(viewModel: ShowDetailsViewModel(tvShow: TvMazeStore.shared.getTvShow(), coordinator: ShowCoordinatorView()))
+    ShowDetailsView(viewModel: ShowDetailsViewModel(tvShow: TvMazeStore.getTvShow(),
+                                                    networkManager: NetworkManager(),
+                                                    coordinator: ShowCoordinatorView()))
 }

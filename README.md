@@ -25,6 +25,10 @@ TvMaze app
 
 Bonus (Optional)
 
+
+● Cache Image working properly
+● Fix Navigation
+
 ● Allow the user to set a PIN number to secure the application and prevent unauthorized users.
 ● For supported phones, the user must be able to choose if they want to enable fingerprint authentication to avoid typing the PIN number while opening the app.
 ● Allow the user to save a series as a favorite.

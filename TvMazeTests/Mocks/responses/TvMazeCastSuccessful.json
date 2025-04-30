@@ -1,0 +1,2011 @@
+[
+    {
+        "person": {
+            "id": 6662,
+            "url": "https://www.tvmaze.com/people/6662/caitriona-balfe",
+            "name": "Caitríona Balfe",
+            "country": {
+                "name": "Ireland",
+                "code": "IE",
+                "timezone": "Europe/Dublin"
+            },
+            "birthday": "1979-10-04",
+            "deathday": null,
+            "gender": "Female",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/462/1156412.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/462/1156412.jpg"
+            },
+            "updated": 1737114087,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/6662"
+                }
+            }
+        },
+        "character": {
+            "id": 6904,
+            "url": "https://www.tvmaze.com/characters/6904/outlander-claire-randall",
+            "name": "Claire Randall",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/0/374.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/0/374.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/6904"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 6668,
+            "url": "https://www.tvmaze.com/people/6668/sam-heughan",
+            "name": "Sam Heughan",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1980-04-30",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/181/452779.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/181/452779.jpg"
+            },
+            "updated": 1737632376,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/6668"
+                }
+            }
+        },
+        "character": {
+            "id": 129081,
+            "url": "https://www.tvmaze.com/characters/129081/outlander-james-jamie-alexander-malcolm-mackenzie-fraser",
+            "name": "James \"Jamie\" Alexander Malcolm MacKenzie Fraser",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/0/375.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/0/375.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/129081"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 65244,
+            "url": "https://www.tvmaze.com/people/65244/richard-rankin",
+            "name": "Richard Rankin",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1983-01-04",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/187/469103.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/187/469103.jpg"
+            },
+            "updated": 1737114087,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/65244"
+                }
+            }
+        },
+        "character": {
+            "id": 6979,
+            "url": "https://www.tvmaze.com/characters/6979/outlander-roger-wakefield",
+            "name": "Roger Wakefield",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/87/219056.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/87/219056.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/6979"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 75952,
+            "url": "https://www.tvmaze.com/people/75952/sophie-skelton",
+            "name": "Sophie Skelton",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1994-03-07",
+            "deathday": null,
+            "gender": "Female",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/64/160010.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/64/160010.jpg"
+            },
+            "updated": 1737114087,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/75952"
+                }
+            }
+        },
+        "character": {
+            "id": 306494,
+            "url": "https://www.tvmaze.com/characters/306494/outlander-brianna-bree-randall-fraser",
+            "name": "Brianna \"Bree\" Randall Fraser",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/87/219055.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/87/219055.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/306494"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 40523,
+            "url": "https://www.tvmaze.com/people/40523/john-bell",
+            "name": "John Bell",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1997-10-20",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/133/334939.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/133/334939.jpg"
+            },
+            "updated": 1737114087,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/40523"
+                }
+            }
+        },
+        "character": {
+            "id": 472198,
+            "url": "https://www.tvmaze.com/characters/472198/outlander-ian-young-ian-fraser-murray",
+            "name": "Ian \"Young Ian\" Fraser Murray",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/546/1365210.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/546/1365210.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/472198"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 6663,
+            "url": "https://www.tvmaze.com/people/6663/duncan-lacroix",
+            "name": "Duncan Lacroix",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1971-12-28",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/0/972.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/0/972.jpg"
+            },
+            "updated": 1572440041,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/6663"
+                }
+            }
+        },
+        "character": {
+            "id": 6905,
+            "url": "https://www.tvmaze.com/characters/6905/outlander-murtagh-fitzgibbons-fraser",
+            "name": "Murtagh Fitzgibbons Fraser",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/9/23222.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/9/23222.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/6905"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 55588,
+            "url": "https://www.tvmaze.com/people/55588/cesar-domboy",
+            "name": "César Domboy",
+            "country": {
+                "name": "France",
+                "code": "FR",
+                "timezone": "Europe/Paris"
+            },
+            "birthday": "1990-03-10",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/8/21361.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/8/21361.jpg"
+            },
+            "updated": 1735736328,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/55588"
+                }
+            }
+        },
+        "character": {
+            "id": 472199,
+            "url": "https://www.tvmaze.com/characters/472199/outlander-fergus-fraser",
+            "name": "Fergus Fraser",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/137/343030.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/137/343030.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/472199"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 192573,
+            "url": "https://www.tvmaze.com/people/192573/lauren-lyle",
+            "name": "Lauren Lyle",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1993-07-12",
+            "deathday": null,
+            "gender": "Female",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/133/334938.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/133/334938.jpg"
+            },
+            "updated": 1741029939,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/192573"
+                }
+            }
+        },
+        "character": {
+            "id": 476287,
+            "url": "https://www.tvmaze.com/characters/476287/outlander-marsali-mackimmie",
+            "name": "Marsali MacKimmie",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/137/343032.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/137/343032.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/476287"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 222328,
+            "url": "https://www.tvmaze.com/people/222328/caitlin-oryan",
+            "name": "Caitlin O'Ryan",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": null,
+            "deathday": null,
+            "gender": "Female",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/178/446804.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/178/446804.jpg"
+            },
+            "updated": 1688120394,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/222328"
+                }
+            }
+        },
+        "character": {
+            "id": 578577,
+            "url": "https://www.tvmaze.com/characters/578577/outlander-elizabeth-lizzie-wemyss",
+            "name": "Elizabeth \"Lizzie\" Wemyss",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/399/998867.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/399/998867.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/578577"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 54039,
+            "url": "https://www.tvmaze.com/people/54039/david-berry",
+            "name": "David Berry",
+            "country": {
+                "name": "Canada",
+                "code": "CA",
+                "timezone": "America/Toronto"
+            },
+            "birthday": "1984-01-18",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/176/442230.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/176/442230.jpg"
+            },
+            "updated": 1737114087,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/54039"
+                }
+            }
+        },
+        "character": {
+            "id": 464532,
+            "url": "https://www.tvmaze.com/characters/464532/outlander-lord-john-grey",
+            "name": "Lord John Grey",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/129/323889.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/129/323889.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/464532"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 6666,
+            "url": "https://www.tvmaze.com/people/6666/grant-orourke",
+            "name": "Grant O'Rourke",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": null,
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/418/1046329.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/418/1046329.jpg"
+            },
+            "updated": 1740225474,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/6666"
+                }
+            }
+        },
+        "character": {
+            "id": 6908,
+            "url": "https://www.tvmaze.com/characters/6908/outlander-rupert-mackenzie",
+            "name": "Rupert MacKenzie",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/9/23221.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/9/23221.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/6908"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 6665,
+            "url": "https://www.tvmaze.com/people/6665/graham-mctavish",
+            "name": "Graham McTavish",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1961-01-04",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/118/295938.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/118/295938.jpg"
+            },
+            "updated": 1742535538,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/6665"
+                }
+            }
+        },
+        "character": {
+            "id": 6907,
+            "url": "https://www.tvmaze.com/characters/6907/outlander-dougal-mackenzie",
+            "name": "Dougal MacKenzie",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/0/377.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/0/377.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/6907"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 6669,
+            "url": "https://www.tvmaze.com/people/6669/stephen-walters",
+            "name": "Stephen Walters",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1975-05-22",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/0/970.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/0/970.jpg"
+            },
+            "updated": 1742751248,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/6669"
+                }
+            }
+        },
+        "character": {
+            "id": 6911,
+            "url": "https://www.tvmaze.com/characters/6911/outlander-angus-mhor",
+            "name": "Angus Mhor",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/9/23220.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/9/23220.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/6911"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 6670,
+            "url": "https://www.tvmaze.com/people/6670/tobias-menzies",
+            "name": "Tobias Menzies",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1974-03-07",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/157/393180.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/157/393180.jpg"
+            },
+            "updated": 1713530670,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/6670"
+                }
+            }
+        },
+        "character": {
+            "id": 6912,
+            "url": "https://www.tvmaze.com/characters/6912/outlander-frank-randall",
+            "name": "Frank Randall",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/9/23218.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/9/23218.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/6912"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 6670,
+            "url": "https://www.tvmaze.com/people/6670/tobias-menzies",
+            "name": "Tobias Menzies",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1974-03-07",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/157/393180.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/157/393180.jpg"
+            },
+            "updated": 1713530670,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/6670"
+                }
+            }
+        },
+        "character": {
+            "id": 353344,
+            "url": "https://www.tvmaze.com/characters/353344/outlander-captain-jonathan-black-jack-wolverton-randall",
+            "name": "Captain Jonathan \"Black Jack\" Wolverton Randall",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/86/217368.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/86/217368.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/353344"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 126857,
+            "url": "https://www.tvmaze.com/people/126857/charles-vandervaart",
+            "name": "Charles Vandervaart",
+            "country": {
+                "name": "Canada",
+                "code": "CA",
+                "timezone": "America/Toronto"
+            },
+            "birthday": "2000-09-09",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/56/141089.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/56/141089.jpg"
+            },
+            "updated": 1737114087,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/126857"
+                }
+            }
+        },
+        "character": {
+            "id": 1129359,
+            "url": "https://www.tvmaze.com/characters/1129359/outlander-william-ransom",
+            "name": "William Ransom",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/466/1165465.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/466/1165465.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/1129359"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 57481,
+            "url": "https://www.tvmaze.com/people/57481/steven-cree",
+            "name": "Steven Cree",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1980-02-29",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/11/29529.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/11/29529.jpg"
+            },
+            "updated": 1736214494,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/57481"
+                }
+            }
+        },
+        "character": {
+            "id": 129118,
+            "url": "https://www.tvmaze.com/characters/129118/outlander-ian-murray",
+            "name": "Ian Murray",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/87/218580.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/87/218580.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/129118"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 51572,
+            "url": "https://www.tvmaze.com/people/51572/andrew-gower",
+            "name": "Andrew Gower",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1989-11-08",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/187/469133.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/187/469133.jpg"
+            },
+            "updated": 1731641346,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/51572"
+                }
+            }
+        },
+        "character": {
+            "id": 272897,
+            "url": "https://www.tvmaze.com/characters/272897/outlander-prince-charles-edward-stuart",
+            "name": "Prince Charles Edward Stuart",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/87/218568.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/87/218568.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/272897"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 8269,
+            "url": "https://www.tvmaze.com/people/8269/maria-doyle-kennedy",
+            "name": "Maria Doyle Kennedy",
+            "country": {
+                "name": "Ireland",
+                "code": "IE",
+                "timezone": "Europe/Dublin"
+            },
+            "birthday": "1964-09-25",
+            "deathday": null,
+            "gender": "Female",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/0/1019.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/0/1019.jpg"
+            },
+            "updated": 1744652022,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/8269"
+                }
+            }
+        },
+        "character": {
+            "id": 469108,
+            "url": "https://www.tvmaze.com/characters/469108/outlander-jocasta-cameron",
+            "name": "Jocasta Cameron",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/173/434490.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/173/434490.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/469108"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 37276,
+            "url": "https://www.tvmaze.com/people/37276/ed-speleers",
+            "name": "Ed Speleers",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1988-04-07",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/444/1111204.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/444/1111204.jpg"
+            },
+            "updated": 1742401429,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/37276"
+                }
+            }
+        },
+        "character": {
+            "id": 469109,
+            "url": "https://www.tvmaze.com/characters/469109/outlander-stephen-bonnet",
+            "name": "Stephen Bonnet",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/173/434489.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/173/434489.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/469109"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 6667,
+            "url": "https://www.tvmaze.com/people/6667/lotte-verbeek",
+            "name": "Lotte Verbeek",
+            "country": {
+                "name": "Netherlands",
+                "code": "NL",
+                "timezone": "Europe/Amsterdam"
+            },
+            "birthday": "1982-06-24",
+            "deathday": null,
+            "gender": "Female",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/102/257378.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/102/257378.jpg"
+            },
+            "updated": 1732882476,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/6667"
+                }
+            }
+        },
+        "character": {
+            "id": 6909,
+            "url": "https://www.tvmaze.com/characters/6909/outlander-geillis-duncan-gillian-edgars",
+            "name": "Geillis Duncan / Gillian Edgars",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/0/376.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/0/376.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/6909"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 6692,
+            "url": "https://www.tvmaze.com/people/6692/nell-hudson",
+            "name": "Nell Hudson",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1990-11-19",
+            "deathday": null,
+            "gender": "Female",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/38/95193.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/38/95193.jpg"
+            },
+            "updated": 1732299584,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/6692"
+                }
+            }
+        },
+        "character": {
+            "id": 6926,
+            "url": "https://www.tvmaze.com/characters/6926/outlander-laoghaire-mackenzie",
+            "name": "Laoghaire MacKenzie",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/9/23223.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/9/23223.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/6926"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 6699,
+            "url": "https://www.tvmaze.com/people/6699/laura-donnelly",
+            "name": "Laura Donnelly",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1982-08-20",
+            "deathday": null,
+            "gender": "Female",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/545/1362586.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/545/1362586.jpg"
+            },
+            "updated": 1732325311,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/6699"
+                }
+            }
+        },
+        "character": {
+            "id": 129083,
+            "url": "https://www.tvmaze.com/characters/129083/outlander-janet-jenny-fraser-murray",
+            "name": "Janet \"Jenny\" Fraser Murray",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/87/218581.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/87/218581.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/129083"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 64196,
+            "url": "https://www.tvmaze.com/people/64196/colin-mcfarlane",
+            "name": "Colin McFarlane",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1961-09-15",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/187/469123.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/187/469123.jpg"
+            },
+            "updated": 1745770950,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/64196"
+                }
+            }
+        },
+        "character": {
+            "id": 571470,
+            "url": "https://www.tvmaze.com/characters/571470/outlander-ulysses",
+            "name": "Ulysses",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/174/435942.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/174/435942.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/571470"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 14179,
+            "url": "https://www.tvmaze.com/people/14179/mark-lewis-jones",
+            "name": "Mark Lewis Jones",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1964-08-31",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/209/524187.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/209/524187.jpg"
+            },
+            "updated": 1736894470,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/14179"
+                }
+            }
+        },
+        "character": {
+            "id": 967006,
+            "url": "https://www.tvmaze.com/characters/967006/outlander-tom-christie",
+            "name": "Tom Christie",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/399/998808.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/399/998808.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/967006"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 6661,
+            "url": "https://www.tvmaze.com/people/6661/bill-paterson",
+            "name": "Bill Paterson",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1945-06-03",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/181/453838.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/181/453838.jpg"
+            },
+            "updated": 1745515280,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/6661"
+                }
+            }
+        },
+        "character": {
+            "id": 6903,
+            "url": "https://www.tvmaze.com/characters/6903/outlander-ned-gowan",
+            "name": "Ned Gowan",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/460/1151444.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/460/1151444.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/6903"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 72923,
+            "url": "https://www.tvmaze.com/people/72923/chris-larkin",
+            "name": "Chris Larkin",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1967-06-19",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/562/1406033.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/562/1406033.jpg"
+            },
+            "updated": 1743792092,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/72923"
+                }
+            }
+        },
+        "character": {
+            "id": 706740,
+            "url": "https://www.tvmaze.com/characters/706740/outlander-richard-brown",
+            "name": "Richard Brown",
+            "image": null,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/706740"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 6664,
+            "url": "https://www.tvmaze.com/people/6664/gary-lewis",
+            "name": "Gary Lewis",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1958-11-30",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/12/31943.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/12/31943.jpg"
+            },
+            "updated": 1740241124,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/6664"
+                }
+            }
+        },
+        "character": {
+            "id": 6906,
+            "url": "https://www.tvmaze.com/characters/6906/outlander-colum-mackenzie",
+            "name": "Colum MacKenzie",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/0/378.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/0/378.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/6906"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 37477,
+            "url": "https://www.tvmaze.com/people/37477/ned-dennehy",
+            "name": "Ned Dennehy",
+            "country": {
+                "name": "Ireland",
+                "code": "IE",
+                "timezone": "Europe/Dublin"
+            },
+            "birthday": "1965-12-08",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/435/1089177.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/435/1089177.jpg"
+            },
+            "updated": 1737643649,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/37477"
+                }
+            }
+        },
+        "character": {
+            "id": 706741,
+            "url": "https://www.tvmaze.com/characters/706741/outlander-lionel-brown",
+            "name": "Lionel Brown",
+            "image": null,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/706741"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 99554,
+            "url": "https://www.tvmaze.com/people/99554/stanley-weber",
+            "name": "Stanley Weber",
+            "country": {
+                "name": "France",
+                "code": "FR",
+                "timezone": "Europe/Paris"
+            },
+            "birthday": "1986-07-13",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/57/144843.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/57/144843.jpg"
+            },
+            "updated": 1744299750,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/99554"
+                }
+            }
+        },
+        "character": {
+            "id": 270025,
+            "url": "https://www.tvmaze.com/characters/270025/outlander-comte-st-germain",
+            "name": "Comte St. Germain",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/87/218572.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/87/218572.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/270025"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 75948,
+            "url": "https://www.tvmaze.com/people/75948/rosie-day",
+            "name": "Rosie Day",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1995-03-06",
+            "deathday": null,
+            "gender": "Female",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/57/144846.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/57/144846.jpg"
+            },
+            "updated": 1724185225,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/75948"
+                }
+            }
+        },
+        "character": {
+            "id": 272898,
+            "url": "https://www.tvmaze.com/characters/272898/outlander-mary-hawkins",
+            "name": "Mary Hawkins",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/87/218570.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/87/218570.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/272898"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 46322,
+            "url": "https://www.tvmaze.com/people/46322/dominique-pinon",
+            "name": "Dominique Pinon",
+            "country": {
+                "name": "France",
+                "code": "FR",
+                "timezone": "Europe/Paris"
+            },
+            "birthday": "1955-03-04",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/3/9562.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/3/9562.jpg"
+            },
+            "updated": 1737113857,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/46322"
+                }
+            }
+        },
+        "character": {
+            "id": 272899,
+            "url": "https://www.tvmaze.com/characters/272899/outlander-master-raymond",
+            "name": "Master Raymond",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/87/218589.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/87/218589.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/272899"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 58645,
+            "url": "https://www.tvmaze.com/people/58645/simon-callow",
+            "name": "Simon Callow",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1949-06-13",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/179/449261.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/179/449261.jpg"
+            },
+            "updated": 1745877671,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/58645"
+                }
+            }
+        },
+        "character": {
+            "id": 129093,
+            "url": "https://www.tvmaze.com/characters/129093/outlander-clarence-marylebone-duke-of-sandringham",
+            "name": "Clarence Marylebone, Duke of Sandringham",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/87/218590.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/87/218590.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/129093"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 219895,
+            "url": "https://www.tvmaze.com/people/219895/natalie-simpson",
+            "name": "Natalie Simpson",
+            "country": null,
+            "birthday": null,
+            "deathday": null,
+            "gender": "Female",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/174/437453.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/174/437453.jpg"
+            },
+            "updated": 1706483872,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/219895"
+                }
+            }
+        },
+        "character": {
+            "id": 571471,
+            "url": "https://www.tvmaze.com/characters/571471/outlander-phaedre",
+            "name": "Phaedre",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/174/435941.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/174/435941.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/571471"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 113716,
+            "url": "https://www.tvmaze.com/people/113716/braeden-clarke",
+            "name": "Braeden Clarke",
+            "country": {
+                "name": "Canada",
+                "code": "CA",
+                "timezone": "America/Toronto"
+            },
+            "birthday": null,
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/216/540388.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/216/540388.jpg"
+            },
+            "updated": 1740429717,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/113716"
+                }
+            }
+        },
+        "character": {
+            "id": 584609,
+            "url": "https://www.tvmaze.com/characters/584609/outlander-kaheroton",
+            "name": "Kaheroton",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/179/448232.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/179/448232.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/584609"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 51156,
+            "url": "https://www.tvmaze.com/people/51156/douglas-henshall",
+            "name": "Douglas Henshall",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1965-11-19",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/97/244334.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/97/244334.jpg"
+            },
+            "updated": 1743606478,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/51156"
+                }
+            }
+        },
+        "character": {
+            "id": 129117,
+            "url": "https://www.tvmaze.com/characters/129117/outlander-taran-macquarrie",
+            "name": "Taran MacQuarrie",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/87/218591.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/87/218591.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/129117"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 37963,
+            "url": "https://www.tvmaze.com/people/37963/frances-de-la-tour",
+            "name": "Frances de la Tour",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1944-07-30",
+            "deathday": null,
+            "gender": "Female",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/3/8711.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/3/8711.jpg"
+            },
+            "updated": 1734003646,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/37963"
+                }
+            }
+        },
+        "character": {
+            "id": 276708,
+            "url": "https://www.tvmaze.com/characters/276708/outlander-mother-hildegarde",
+            "name": "Mother Hildegarde",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/87/218588.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/87/218588.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/276708"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 62066,
+            "url": "https://www.tvmaze.com/people/62066/billy-boyd",
+            "name": "Billy Boyd",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1968-08-28",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/63/158088.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/63/158088.jpg"
+            },
+            "updated": 1740051164,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/62066"
+                }
+            }
+        },
+        "character": {
+            "id": 586391,
+            "url": "https://www.tvmaze.com/characters/586391/outlander-gerald-forbes",
+            "name": "Gerald Forbes",
+            "image": null,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/586391"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 45988,
+            "url": "https://www.tvmaze.com/people/45988/gregory-odjig",
+            "name": "Gregory Odjig",
+            "country": {
+                "name": "Canada",
+                "code": "CA",
+                "timezone": "America/Toronto"
+            },
+            "birthday": "1977-09-06",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/184/460239.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/184/460239.jpg"
+            },
+            "updated": 1550257479,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/45988"
+                }
+            }
+        },
+        "character": {
+            "id": 584611,
+            "url": "https://www.tvmaze.com/characters/584611/outlander-satehoronies",
+            "name": "Satehoronies",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/181/454298.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/181/454298.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/584611"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 110361,
+            "url": "https://www.tvmaze.com/people/110361/tom-jackson",
+            "name": "Tom Jackson",
+            "country": {
+                "name": "Canada",
+                "code": "CA",
+                "timezone": "America/Toronto"
+            },
+            "birthday": "1948-01-01",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/353/883195.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/353/883195.jpg"
+            },
+            "updated": 1741261649,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/110361"
+                }
+            }
+        },
+        "character": {
+            "id": 588657,
+            "url": "https://www.tvmaze.com/characters/588657/outlander-tehwahsehkwe",
+            "name": "Tehwahsehkwe",
+            "image": null,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/588657"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 113093,
+            "url": "https://www.tvmaze.com/people/113093/simon-baker",
+            "name": "Simon Baker",
+            "country": {
+                "name": "Canada",
+                "code": "CA",
+                "timezone": "America/Toronto"
+            },
+            "birthday": "1986-03-30",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/39/99784.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/39/99784.jpg"
+            },
+            "updated": 1740180946,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/113093"
+                }
+            }
+        },
+        "character": {
+            "id": 970373,
+            "url": "https://www.tvmaze.com/characters/970373/outlander-still-water",
+            "name": "Still Water",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/399/998829.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/399/998829.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/970373"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 60778,
+            "url": "https://www.tvmaze.com/people/60778/glen-gould",
+            "name": "Glen Gould",
+            "country": {
+                "name": "Canada",
+                "code": "CA",
+                "timezone": "America/Toronto"
+            },
+            "birthday": "1971-06-06",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/37/93870.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/37/93870.jpg"
+            },
+            "updated": 1739987097,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/60778"
+                }
+            }
+        },
+        "character": {
+            "id": 970374,
+            "url": "https://www.tvmaze.com/characters/970374/outlander-chief-bird",
+            "name": "Chief Bird",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/399/998831.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/399/998831.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/970374"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 38170,
+            "url": "https://www.tvmaze.com/people/38170/richard-dillane",
+            "name": "Richard Dillane",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": null,
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/546/1367146.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/546/1367146.jpg"
+            },
+            "updated": 1745442620,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/38170"
+                }
+            }
+        },
+        "character": {
+            "id": 477797,
+            "url": "https://www.tvmaze.com/characters/477797/outlander-captain-raines",
+            "name": "Captain Raines",
+            "image": null,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/477797"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 15298,
+            "url": "https://www.tvmaze.com/people/15298/tantoo-cardinal",
+            "name": "Tantoo Cardinal",
+            "country": {
+                "name": "Canada",
+                "code": "CA",
+                "timezone": "America/Toronto"
+            },
+            "birthday": "1950-07-20",
+            "deathday": null,
+            "gender": "Female",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/132/331361.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/132/331361.jpg"
+            },
+            "updated": 1744227064,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/15298"
+                }
+            }
+        },
+        "character": {
+            "id": 574125,
+            "url": "https://www.tvmaze.com/characters/574125/outlander-adawehi",
+            "name": "Adawehi",
+            "image": null,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/574125"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 4120,
+            "url": "https://www.tvmaze.com/people/4120/carmen-moore",
+            "name": "Carmen Moore",
+            "country": {
+                "name": "Canada",
+                "code": "CA",
+                "timezone": "America/Toronto"
+            },
+            "birthday": "1972-12-24",
+            "deathday": null,
+            "gender": "Female",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/250/625969.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/250/625969.jpg"
+            },
+            "updated": 1742679685,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/4120"
+                }
+            }
+        },
+        "character": {
+            "id": 588656,
+            "url": "https://www.tvmaze.com/characters/588656/outlander-wahkatiiosta",
+            "name": "Wahkatiiosta",
+            "image": null,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/588656"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 6665,
+            "url": "https://www.tvmaze.com/people/6665/graham-mctavish",
+            "name": "Graham McTavish",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1961-01-04",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/118/295938.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/118/295938.jpg"
+            },
+            "updated": 1742535538,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/6665"
+                }
+            }
+        },
+        "character": {
+            "id": 712843,
+            "url": "https://www.tvmaze.com/characters/712843/outlander-buck-mackenzie",
+            "name": "Buck MacKenzie",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/249/622745.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/249/622745.jpg"
+            },
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/712843"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 33102,
+            "url": "https://www.tvmaze.com/people/33102/clive-russell",
+            "name": "Clive Russell",
+            "country": {
+                "name": "United Kingdom",
+                "code": "GB",
+                "timezone": "Europe/London"
+            },
+            "birthday": "1945-12-07",
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/186/465597.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/186/465597.jpg"
+            },
+            "updated": 1726231670,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/33102"
+                }
+            }
+        },
+        "character": {
+            "id": 292655,
+            "url": "https://www.tvmaze.com/characters/292655/outlander-simon-fraser-lord-lovat",
+            "name": "Simon Fraser, Lord Lovat",
+            "image": null,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/292655"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 59261,
+            "url": "https://www.tvmaze.com/people/59261/yan-tual",
+            "name": "Yan Tual",
+            "country": {
+                "name": "France",
+                "code": "FR",
+                "timezone": "Europe/Paris"
+            },
+            "birthday": null,
+            "deathday": null,
+            "gender": "Male",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/196/492410.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/196/492410.jpg"
+            },
+            "updated": 1707043876,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/59261"
+                }
+            }
+        },
+        "character": {
+            "id": 588658,
+            "url": "https://www.tvmaze.com/characters/588658/outlander-father-alexandre-ferigault",
+            "name": "Father Alexandre Ferigault",
+            "image": null,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/588658"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 70751,
+            "url": "https://www.tvmaze.com/people/70751/sera-lys-mcarthur",
+            "name": "Sera-Lys McArthur",
+            "country": {
+                "name": "Canada",
+                "code": "CA",
+                "timezone": "America/Toronto"
+            },
+            "birthday": null,
+            "deathday": null,
+            "gender": "Female",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/186/466638.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/186/466638.jpg"
+            },
+            "updated": 1730777089,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/70751"
+                }
+            }
+        },
+        "character": {
+            "id": 588659,
+            "url": "https://www.tvmaze.com/characters/588659/outlander-johiehon",
+            "name": "Johiehon",
+            "image": null,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/588659"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    },
+    {
+        "person": {
+            "id": 155838,
+            "url": "https://www.tvmaze.com/people/155838/gail-maurice",
+            "name": "Gail Maurice",
+            "country": null,
+            "birthday": null,
+            "deathday": null,
+            "gender": "Female",
+            "image": {
+                "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/88/221169.jpg",
+                "original": "https://static.tvmaze.com/uploads/images/original_untouched/88/221169.jpg"
+            },
+            "updated": 1725193744,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/people/155838"
+                }
+            }
+        },
+        "character": {
+            "id": 975023,
+            "url": "https://www.tvmaze.com/characters/975023/outlander-clan-mother",
+            "name": "Clan Mother",
+            "image": null,
+            "_links": {
+                "self": {
+                    "href": "https://api.tvmaze.com/characters/975023"
+                }
+            }
+        },
+        "self": false,
+        "voice": false
+    }
+]

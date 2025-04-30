@@ -12,7 +12,7 @@ struct ShowRowView: View {
 
     var body: some View {
         HStack(alignment: .top) {
-            CachedAsyncImage(stringUrl: show.image?.medium)
+            CachedAsyncImage(stringUrl: show.image?.medium ?? "")
 
             VStack(alignment: .leading) {
                 Text(show.name ?? "")
@@ -42,5 +42,5 @@ struct ShowRowView: View {
 }
 
 #Preview {
-    ShowRowView(show: TvMazeStore.shared.getTvShow())
+    ShowRowView(show: TvMazeStore.getTvShow())
 }

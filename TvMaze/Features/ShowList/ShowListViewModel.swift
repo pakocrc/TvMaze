@@ -11,16 +11,19 @@ import Foundation
 final class ShowListViewModel: ObservableObject {
     @Published var tvShowList = [TvMazeShow]()
     @Published var searchTvShowList = [TvMazeShow]()
-    @Published var currentLastItem: TvMazeShow?
+    @Published var refreshItem: TvMazeShow?
     @Published var searchCriteria: String = ""
     @Published var isSearching = false
 
+    private var isLoading = false
     private var page = 0
     private var cancellables = Set<AnyCancellable>()
 
+    let networkManager: NetworkManager
     let coordinator: ShowCoordinatorView
 
-    init(coordinator: ShowCoordinatorView) {
+    init(networkManager: NetworkManager, coordinator: ShowCoordinatorView) {
+        self.networkManager = networkManager
         self.coordinator = coordinator
 
         Task {
@@ -49,15 +52,21 @@ final class ShowListViewModel: ObservableObject {
                     self?.searchTvShowList.removeAll()
                 }
             }.store(in: &cancellables)
+
+        $tvShowList
+            .sink { shows in
+                print("Shows count:", shows.count)
+            }.store(in: &cancellables)
     }
 
     @MainActor
     func searchShow(searchCriteria: String) {
         Task {
             do {
-                debugPrint("On searchShow()")
-                let searchTvMazeShowResult = try await NetworkManager.shared.searchTvShow(searchCriteria: searchCriteria)
+                isLoading = true
+                let searchTvMazeShowResult = try await networkManager.searchTvShow(searchCriteria: searchCriteria)
                 self.searchTvShowList = searchTvMazeShowResult.map({ $0.show })
+                isLoading = false
 
             } catch let error {
                 debugPrint(error.localizedDescription)
@@ -66,17 +75,26 @@ final class ShowListViewModel: ObservableObject {
     }
 
     @MainActor
-    func fetchShowsList() {
-        Task {
+    func fetchShowsList() async {
+        if !isLoading {
             do {
-                let newTvShows = try await NetworkManager.shared.fetchShowsList(page: self.page)
-                self.tvShowList.append(contentsOf: newTvShows)
-                self.currentLastItem = self.tvShowList.last
-                self.page += 1
+                isLoading = true
+                let newTvShows = try await networkManager.fetchShowsList(page: page)
+                tvShowList.append(contentsOf: newTvShows)
+                refreshItem = tvShowList.last
+                page += 1
+                isLoading = false
 
             } catch let error {
                 debugPrint(error.localizedDescription)
             }
         }
+    }
+
+    @MainActor
+    func refreshShowsList() async {
+        page = 0
+        tvShowList.removeAll()
+        await fetchShowsList()
     }
 }

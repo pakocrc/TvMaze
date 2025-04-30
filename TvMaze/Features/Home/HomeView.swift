@@ -18,7 +18,7 @@ struct HomeView: View {
                         .foregroundStyle(.primary)
                 }
 
-            FavoritesCoordinatorView()
+            ShowCoordinatorView()
                 .redirect(.favoritesList)
                 .tabItem {
                     Label("Favorites", systemImage: "star")

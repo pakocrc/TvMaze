@@ -10,9 +10,9 @@ import SwiftData
 
 @Model
 final class TvMazeNetwork: Codable {
-    let id: Int?
-    let name: String?
-    let officialSite: String?
+    var id: Int?
+    var name: String?
+    var officialSite: String?
     
     init(id: Int?, name: String?, officialSite: String?) {
         self.id = id

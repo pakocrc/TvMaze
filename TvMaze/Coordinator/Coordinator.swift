@@ -17,4 +17,12 @@ protocol Coordinator: ObservableObject {
     associatedtype CoordinatorView: View
     var path: [CoordinatorSteps] { get set }
     func redirect(_ path: CoordinatorSteps) -> CoordinatorView
+
+    func navigateToDetail(tvShow: TvMazeShow)
+
+    func navigateToEpisodes(tvShow: TvMazeShow, seasons: [TvMazeSeason])
+
+    func navigateToEpisodeDetails(episode: TvMazeEpisode)
+
+    func navigateToCast(tvShow: TvMazeShow)
 }

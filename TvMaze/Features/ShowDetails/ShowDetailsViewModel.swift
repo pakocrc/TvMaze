@@ -9,12 +9,15 @@ import Foundation
 
 final class ShowDetailsViewModel: ObservableObject {
     @Published var seasons = [TvMazeSeason]()
+    @Published var isPresentingImageFullView = false
 
     let tvShow: TvMazeShow
+    let networkManager: NetworkManager
     let coordinator: ShowCoordinatorView
 
-    init(tvShow: TvMazeShow, coordinator: ShowCoordinatorView) {
+    init(tvShow: TvMazeShow, networkManager: NetworkManager, coordinator: ShowCoordinatorView) {
         self.tvShow = tvShow
+        self.networkManager = networkManager
         self.coordinator = coordinator
 
         Task {
@@ -26,15 +29,11 @@ final class ShowDetailsViewModel: ObservableObject {
     func fetchEpisodeList() {
         Task {
             do {
-                self.seasons = try await NetworkManager.shared.fetchSeasonList(showId: String(self.tvShow.id))
+                self.seasons = try await networkManager.fetchSeasonList(showId: String(self.tvShow.showId))
 
             } catch let error {
                 debugPrint(error.localizedDescription)
             }
         }
-    }
-
-    func favoriteSelected() {
-        
     }
 }

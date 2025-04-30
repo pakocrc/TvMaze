@@ -8,9 +8,9 @@
 import Foundation
 
 final class FavoritesViewModel: ObservableObject {
-    let coordinator: FavoritesCoordinatorView
+    let coordinator: ShowCoordinatorView
 
-    init(coordinator: FavoritesCoordinatorView) {
+    init(coordinator: ShowCoordinatorView) {
         self.coordinator = coordinator
     }
 }

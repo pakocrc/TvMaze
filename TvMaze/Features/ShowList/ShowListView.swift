@@ -12,51 +12,47 @@ struct ShowListView: View {
 
     var body: some View {
         ScrollView {
-            LazyVStack {
-                if viewModel.isSearching {
-                    ForEach(viewModel.searchTvShowList) { show in
-                        Button {
-                            viewModel.coordinator.navigateToDetail(tvShow: show)
-                        } label: {
-                            ShowRowView(show: show)
-                                .frame(height: 200, alignment: .center)
-                                .task {
-                                    if show == viewModel.currentLastItem {
-                                        Task {
-                                            viewModel.fetchShowsList()
+            if viewModel.tvShowList.isEmpty {
+                ContentUnavailableView("Loading", systemImage: "arrow.down.circle.dotted", description: Text("Fetching shows data..."))
+            } else {
+                LazyVStack {
+                    if viewModel.isSearching {
+                        ForEach(viewModel.searchTvShowList) { show in
+                            Button {
+                                viewModel.coordinator.navigateToDetail(tvShow: show)
+                            } label: {
+                                ShowRowView(show: show)
+                                    .frame(height: 200, alignment: .center)
+                            }
+                            .foregroundStyle(.primary)
+
+                            Divider()
+                                .padding(.horizontal)
+                        }
+
+                    } else {
+                        ForEach(viewModel.tvShowList) { show in
+                            Button {
+                                viewModel.coordinator.navigateToDetail(tvShow: show)
+                            } label: {
+                                ShowRowView(show: show)
+                                    .frame(height: 200, alignment: .center)
+                                    .task {
+                                        if show == viewModel.refreshItem {
+                                            await viewModel.fetchShowsList()
                                         }
                                     }
-                                }
+                            }
+                            .foregroundStyle(.primary)
+
+                            Divider()
+                                .padding(.horizontal)
                         }
-                        .foregroundStyle(.primary)
-
-                        Divider()
-                            .padding(.horizontal)
-                    }
-
-                } else {
-                    ForEach(viewModel.tvShowList) { show in
-                        Button {
-                            viewModel.coordinator.navigateToDetail(tvShow: show)
-                        } label: {
-                            ShowRowView(show: show)
-                                .frame(height: 200, alignment: .center)
-                                .task {
-                                    if show == viewModel.currentLastItem {
-                                        Task {
-                                            viewModel.fetchShowsList()
-                                        }
-                                    }
-                                }
-                        }
-                        .foregroundStyle(.primary)
-
-                        Divider()
-                            .padding(.horizontal)
                     }
                 }
             }
         }
+        .refreshable(action: { await viewModel.refreshShowsList() })
         .searchPresentationToolbarBehavior(.automatic)
         .scrollTargetLayout()
         .scrollTargetBehavior(.viewAligned)
@@ -68,5 +64,6 @@ struct ShowListView: View {
 }
 
 #Preview {
-    ShowListView(viewModel: ShowListViewModel(coordinator: ShowCoordinatorView()))
+    ShowListView(viewModel: ShowListViewModel(networkManager: NetworkManager(),
+                                              coordinator: ShowCoordinatorView()))
 }

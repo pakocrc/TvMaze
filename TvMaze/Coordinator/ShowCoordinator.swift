@@ -9,7 +9,12 @@ import Foundation
 import SwiftUI
 
 enum ShowSteps: Steps {
-    case showList, showDetail(TvMazeShow), episodes(TvMazeShow, [TvMazeSeason]), episodeDetail(TvMazeEpisode)
+    case showList
+    case favoritesList
+    case showDetail(TvMazeShow)
+    case episodes(TvMazeShow, [TvMazeSeason])
+    case cast(TvMazeShow)
+    case episodeDetail(TvMazeEpisode)
 }
 
 extension ShowSteps: Identifiable, Equatable {
@@ -28,8 +33,11 @@ extension ShowSteps: Identifiable, Equatable {
 
 final class ShowCoordinatorView: ObservableObject {
     @Published var path = [ShowSteps]()
+    let networkService: NetworkManager
 
-    init() { }
+    init() {
+        self.networkService = NetworkManager()
+    }
 
     func navigateToDetail(tvShow: TvMazeShow) {
         path.append(.showDetail(tvShow))
@@ -43,8 +51,8 @@ final class ShowCoordinatorView: ObservableObject {
         path.append(.episodeDetail(episode))
     }
 
-    func goBack() {
-        path.removeLast()
+    func navigateToCast(tvShow: TvMazeShow) {
+        path.append(.cast(tvShow))
     }
 }
 
@@ -53,13 +61,17 @@ extension ShowCoordinatorView: Coordinator {
     func redirect(_ path: ShowSteps) -> some View {
         switch path {
             case .showList:
-                ShowListView(viewModel: ShowListViewModel(coordinator: self))
+                ShowListView(viewModel: ShowListViewModel(networkManager: self.networkService, coordinator: self))
+            case .favoritesList:
+                FavoritesView(viewModel: FavoritesViewModel(coordinator: self))
             case .showDetail(let tvShow):
-                ShowDetailsView(viewModel: ShowDetailsViewModel(tvShow: tvShow, coordinator: self))
+                ShowDetailsView(viewModel: ShowDetailsViewModel(tvShow: tvShow, networkManager: self.networkService, coordinator: self))
             case .episodes(let tvShow, let seasons):
-                ShowEpisodesView(viewModel: ShowEpisodesViewModel(tvShow: tvShow, seasons: seasons, coordinator: self))
+                ShowEpisodesView(viewModel: ShowEpisodesViewModel(tvShow: tvShow, seasons: seasons, networkManager: self.networkService, coordinator: self))
             case .episodeDetail(let episode):
                 EpisodeDetailsView(viewModel: EpisodeDetailsViewModel(episode: episode, coordinator: self))
+            case .cast(let tvShow):
+                CastView(viewModel: CastViewModel(tvShow: tvShow, networkManager: self.networkService, coordinator: self))
         }
     }
 }

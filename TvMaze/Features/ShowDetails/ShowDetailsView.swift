@@ -133,6 +133,9 @@ struct ShowDetailsView: View {
                     .foregroundStyle(.primary)
                     .padding()
 
+                    Divider()
+                        .padding(.horizontal)
+
                     Button {
                         viewModel.presentShowCast.toggle()
                     } label: {

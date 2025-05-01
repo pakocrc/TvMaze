@@ -9,12 +9,21 @@ import SwiftUI
 
 struct EpisodeDetailsView: View {
     let episode: TvMazeEpisode
+    @State var isPresentingImageFullView = false
 
     var body: some View {
         GeometryReader { proxy in
             ScrollView {
                 VStack {
                     CachedAsyncImage(stringUrl: episode.image?.medium ?? "", placeholder: .wallpaper)
+                        .frame(width: proxy.size.width, height: proxy.size.height / 2, alignment: .center)
+                        .onTapGesture {
+                            isPresentingImageFullView.toggle()
+                        }
+                        .sheet(isPresented: $isPresentingImageFullView) {
+                            ImageFullView(title: episode.name ?? "",
+                                          imageUrl: episode.image?.original ?? "")
+                        }
 
                     VStack(alignment: .leading) {
                         HStack(alignment: .top) {

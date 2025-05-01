@@ -103,4 +103,21 @@ final class NetworkManagerMock: NetworkProtocol {
     func fetchImage(url: String) async throws -> Data {
         return Data()
     }
+
+    func fetchPersonDetails(id: String) async throws -> TvMazePerson {
+        let path = "TvMazePersonSuccessful"
+        guard let url = Bundle.main.url(forResource: path, withExtension: "json") else {
+            debugPrint("❌ Error. Failed to load \(path)")
+            throw NetworkError.invalidUrl
+        }
+
+        do {
+            let data = try Data(contentsOf: url)
+            return try JSONDecoder().decode(TvMazePerson.self, from: data)
+
+        } catch let error {
+            debugPrint("❌ Error \(error). Decode failed of data in", path)
+            throw NetworkError.decodingFailed
+        }
+    }
 }

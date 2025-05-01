@@ -1,0 +1,23 @@
+{
+    "id": 6662,
+    "url": "https://www.tvmaze.com/people/6662/caitriona-balfe",
+    "name": "Caitríona Balfe",
+    "country": {
+        "name": "Ireland",
+        "code": "IE",
+        "timezone": "Europe/Dublin"
+    },
+    "birthday": "1979-10-04",
+    "deathday": null,
+    "gender": "Female",
+    "image": {
+        "medium": "https://static.tvmaze.com/uploads/images/medium_portrait/462/1156412.jpg",
+        "original": "https://static.tvmaze.com/uploads/images/original_untouched/462/1156412.jpg"
+    },
+    "updated": 1737114087,
+    "_links": {
+        "self": {
+            "href": "https://api.tvmaze.com/people/6662"
+        }
+    }
+}

@@ -14,6 +14,7 @@ protocol NetworkProtocol {
     func searchTvShow(searchCriteria: String) async throws -> [SearchTvMazeShow]
     func fetchCast(showId: String) async throws -> [TvMazeCast]
     func fetchImage(url: String) async throws -> Data
+    func fetchPersonDetails(id: String) async throws -> TvMazePerson
 }
 
 final class NetworkManager: NetworkProtocol {
@@ -34,11 +35,9 @@ final class NetworkManager: NetworkProtocol {
         
         debugPrint("🛜 Url:", url.absoluteString)
         
-        let urlRequest = URLRequest(url: url)
-        
         do {
-            let (data, response) = try await URLSession.shared.data(for: urlRequest)
-            
+            let (data, response) = try await URLSession.shared.data(from: url)
+
             guard let httpUrlResponse = response as? HTTPURLResponse else { throw NetworkError.invalidResponse }
             
             _ = try validateAsyncResponse(httpUrlResponse)
@@ -59,11 +58,9 @@ final class NetworkManager: NetworkProtocol {
         
         debugPrint("🛜 Url:", url.absoluteString)
         
-        let urlRequest = URLRequest(url: url)
-        
         do {
-            let (data, response) = try await URLSession.shared.data(for: urlRequest)
-            
+            let (data, response) = try await URLSession.shared.data(from: url)
+
             guard let httpUrlResponse = response as? HTTPURLResponse else { throw NetworkError.invalidResponse }
             
             _ = try validateAsyncResponse(httpUrlResponse)
@@ -84,11 +81,9 @@ final class NetworkManager: NetworkProtocol {
         
         debugPrint("🛜 Url:", url.absoluteString)
         
-        let urlRequest = URLRequest(url: url)
-        
         do {
-            let (data, response) = try await URLSession.shared.data(for: urlRequest)
-            
+            let (data, response) = try await URLSession.shared.data(from: url)
+
             guard let httpUrlResponse = response as? HTTPURLResponse else { throw NetworkError.invalidResponse }
             
             _ = try validateAsyncResponse(httpUrlResponse)
@@ -109,11 +104,9 @@ final class NetworkManager: NetworkProtocol {
         
         debugPrint("🛜 Url:", url.absoluteString)
         
-        let urlRequest = URLRequest(url: url)
-        
         do {
-            let (data, response) = try await URLSession.shared.data(for: urlRequest)
-            
+            let (data, response) = try await URLSession.shared.data(from: url)
+
             guard let httpUrlResponse = response as? HTTPURLResponse else { throw NetworkError.invalidResponse }
             
             _ = try validateAsyncResponse(httpUrlResponse)
@@ -134,10 +127,8 @@ final class NetworkManager: NetworkProtocol {
 
         debugPrint("🛜 Url:", url.absoluteString)
 
-        let urlRequest = URLRequest(url: url)
-
         do {
-            let (data, response) = try await URLSession.shared.data(for: urlRequest)
+            let (data, response) = try await URLSession.shared.data(from: url)
 
             guard let httpUrlResponse = response as? HTTPURLResponse else { throw NetworkError.invalidResponse }
 
@@ -158,16 +149,34 @@ final class NetworkManager: NetworkProtocol {
 
 //        debugPrint("🛜 Image Url:", url.absoluteString)
 
-        let urlRequest = URLRequest(url: url)
-
         do {
-            let (data, response) = try await URLSession.shared.data(for: urlRequest)
+            let (data, response) = try await URLSession.shared.data(from: url)
 
             guard let httpUrlResponse = response as? HTTPURLResponse else { throw NetworkError.invalidResponse }
 
             _ = try validateAsyncResponse(httpUrlResponse)
 
             return data
+
+        } catch let error {
+            debugPrint("❌ Error:", error.localizedDescription)
+            throw NetworkError.decodingFailed
+        }
+    }
+
+    func fetchPersonDetails(id: String) async throws -> TvMazePerson {
+        guard let url = URL(string: String("\(baseUrl)/people/\(id)")) else {
+            throw NetworkError.invalidUrl
+        }
+
+        do {
+            let (data, response) = try await URLSession.shared.data(from: url)
+
+            guard let httpUrlResponse = response as? HTTPURLResponse else { throw NetworkError.invalidResponse }
+
+            _ = try validateAsyncResponse(httpUrlResponse)
+
+            return try JSONDecoder().decode(TvMazePerson.self, from: data)
 
         } catch let error {
             debugPrint("❌ Error:", error.localizedDescription)

@@ -10,6 +10,8 @@ import Foundation
 final class CastViewModel: ObservableObject {
     @MainActor @Published var cast = [TvMazeCast]()
 
+    @Published var selectedPersonId: String?
+
     let tvShow: TvMazeShow
     let networkManager: NetworkProtocol
 

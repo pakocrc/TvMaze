@@ -16,3 +16,13 @@ struct TvMazeCast: Codable, Identifiable {
         case person, character
     }
 }
+
+extension TvMazeCast: Hashable, Equatable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+
+    static func ==(lhs: TvMazeCast, rhs: TvMazeCast) -> Bool {
+        return lhs.id == rhs.id
+    }
+}

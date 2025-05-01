@@ -23,27 +23,35 @@ struct CastView: View {
                 LazyVStack(alignment: .leading) {
                     ForEach(viewModel.cast) { cast in
 
-                        HStack(alignment: .center) {
-                            CachedAsyncImage(stringUrl: cast.character.image?.medium ?? "")
-                            .frame(width: 150, alignment: .center)
+                        Button(action: {
+                            viewModel.selectedPersonId = String(cast.person.id)
+                        }) {
+                            HStack(alignment: .center) {
+                                CachedAsyncImage(stringUrl: cast.character.image?.medium ?? "")
+                                .frame(width: 150, alignment: .center)
 
-                            VStack(alignment: .leading) {
-                                Text(cast.character.name)
-                                    .font(.headline)
-                                    .bold()
-                                    .multilineTextAlignment(.leading)
+                                VStack(alignment: .leading) {
+                                    Text(cast.character.name)
+                                        .font(.headline)
+                                        .bold()
+                                        .multilineTextAlignment(.leading)
 
-                                Text(cast.person.name ?? "" )
-                                    .font(.body)
-                                    .multilineTextAlignment(.leading)
+                                    Text(cast.person.name ?? "" )
+                                        .font(.body)
+                                        .multilineTextAlignment(.leading)
+                                }
                             }
                         }
+                        .foregroundStyle(.primary)
                         .padding()
                     }
                 }
             }
         }
         .navigationTitle("\(viewModel.tvShow.name ?? "") Cast")
+        .navigationDestination(item: $viewModel.selectedPersonId) { personId in
+            PersonDetailsView(personId: String(personId), networkManager: viewModel.networkManager)
+        }
     }
 }
 

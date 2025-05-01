@@ -10,60 +10,69 @@ import SwiftUI
 struct ShowListView: View {
     @StateObject var viewModel: ShowListViewModel
 
+    init(networkManager: NetworkProtocol) {
+        self._viewModel = StateObject(wrappedValue: ShowListViewModel(networkManager: networkManager))
+    }
+
     var body: some View {
-        ScrollView {
-            if viewModel.tvShowList.isEmpty {
-                ContentUnavailableView("Loading", systemImage: "arrow.down.circle.dotted", description: Text("Fetching shows data..."))
-            } else {
-                LazyVStack {
-                    if viewModel.isSearching {
-                        ForEach(viewModel.searchTvShowList) { show in
-                            Button {
-                                viewModel.coordinator.navigateToDetail(tvShow: show)
-                            } label: {
-                                ShowRowView(show: show)
-                                    .frame(height: 200, alignment: .center)
+        NavigationStack {
+            ScrollView {
+                if viewModel.tvShowList.isEmpty {
+                    ContentUnavailableView("Loading",
+                                           systemImage: "arrow.down.circle.dotted",
+                                           description: Text("Fetching shows data..."))
+                } else {
+                    LazyVStack {
+                        if viewModel.isSearching {
+                            ForEach(viewModel.searchTvShowList) { show in
+                                Button {
+                                    viewModel.selectedTvShow = show
+                                } label: {
+                                    ShowRowView(show: show)
+                                        .frame(height: 200, alignment: .center)
+                                }
+                                .foregroundStyle(.primary)
+                                
+                                Divider()
+                                    .padding(.horizontal)
                             }
-                            .foregroundStyle(.primary)
-
-                            Divider()
-                                .padding(.horizontal)
-                        }
-
-                    } else {
-                        ForEach(viewModel.tvShowList) { show in
-                            Button {
-                                viewModel.coordinator.navigateToDetail(tvShow: show)
-                            } label: {
-                                ShowRowView(show: show)
-                                    .frame(height: 200, alignment: .center)
-                                    .task {
-                                        if show == viewModel.refreshItem {
-                                            await viewModel.fetchShowsList()
+                            
+                        } else {
+                            ForEach(viewModel.tvShowList) { show in
+                                Button {
+                                    viewModel.selectedTvShow = show
+                                } label: {
+                                    ShowRowView(show: show)
+                                        .frame(height: 200, alignment: .center)
+                                        .task {
+                                            if show == viewModel.refreshItem {
+                                                await viewModel.fetchShowsList()
+                                            }
                                         }
-                                    }
-                            }
-                            .foregroundStyle(.primary)
+                                }
+                                .foregroundStyle(.primary)
 
-                            Divider()
-                                .padding(.horizontal)
+                                Divider()
+                                    .padding(.horizontal)
+                            }
                         }
                     }
                 }
             }
+            .refreshable(action: { await viewModel.refreshShowsList() })
+            .searchPresentationToolbarBehavior(.automatic)
+            .scrollTargetLayout()
+            .scrollTargetBehavior(.viewAligned)
+            .searchable(text: $viewModel.searchCriteria,
+                        isPresented: $viewModel.isSearching)
+            .navigationDestination(item: $viewModel.selectedTvShow) { tvShow in
+                ShowDetailsView(tvShow: tvShow, networkManager: viewModel.networkManager)
+            }
+            .navigationTitle("TvMaze")
         }
-        .refreshable(action: { await viewModel.refreshShowsList() })
-        .searchPresentationToolbarBehavior(.automatic)
-        .scrollTargetLayout()
-        .scrollTargetBehavior(.viewAligned)
-        .searchable(text: $viewModel.searchCriteria,
-                    isPresented: $viewModel.isSearching)
-        .navigationTitle("TvMaze")
-        .applyNavigation(coordinator: viewModel.coordinator)
     }
 }
 
 #Preview {
-    ShowListView(viewModel: ShowListViewModel(networkManager: NetworkManager(),
-                                              coordinator: ShowCoordinatorView()))
+    ShowListView(networkManager: NetworkManager())
 }

@@ -10,6 +10,10 @@ import SwiftUI
 struct CastView: View {
     @StateObject var viewModel: CastViewModel
 
+    init(tvShow: TvMazeShow, networkManager: NetworkProtocol) {
+        self._viewModel = StateObject(wrappedValue: CastViewModel(tvShow: tvShow, networkManager: networkManager))
+    }
+
     var body: some View {
         ScrollView {
             if viewModel.cast.isEmpty {
@@ -39,12 +43,10 @@ struct CastView: View {
                 }
             }
         }
-        .navigationTitle("Cast")
+        .navigationTitle("\(viewModel.tvShow.name ?? "") Cast")
     }
 }
 
 #Preview {
-    CastView(viewModel: CastViewModel(tvShow: TvMazeStore.getTvShow(),
-                                      networkManager: NetworkManager(),
-                                      coordinator: ShowCoordinatorView()))
+    CastView(tvShow: TvMazeStore.getTvShow(), networkManager: NetworkManager())
 }

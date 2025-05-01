@@ -4,7 +4,7 @@
 //
 //  Created by Francisco Cordoba on 18/4/25.
 //
-
+/*
 import Foundation
 import SwiftUI
 
@@ -26,3 +26,4 @@ extension View {
         self.modifier(NavigationSetupModifier(coordinator: coordinator))
     }
 }
+*/

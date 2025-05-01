@@ -10,15 +10,15 @@ import Foundation
 final class ShowDetailsViewModel: ObservableObject {
     @Published var seasons = [TvMazeSeason]()
     @Published var isPresentingImageFullView = false
+    @Published var presentShowEpisodes = false
+    @Published var presentShowCast = false
 
     let tvShow: TvMazeShow
-    let networkManager: NetworkManager
-    let coordinator: ShowCoordinatorView
+    let networkManager: NetworkProtocol
 
-    init(tvShow: TvMazeShow, networkManager: NetworkManager, coordinator: ShowCoordinatorView) {
+    init(tvShow: TvMazeShow, networkManager: NetworkProtocol) {
         self.tvShow = tvShow
         self.networkManager = networkManager
-        self.coordinator = coordinator
 
         Task {
             await fetchEpisodeList()

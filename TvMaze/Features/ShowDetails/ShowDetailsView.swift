@@ -14,7 +14,10 @@ struct ShowDetailsView: View {
 
     @StateObject var viewModel: ShowDetailsViewModel
 
-    @Namespace private var namespace
+    init(tvShow: TvMazeShow, networkManager: NetworkProtocol) {
+        self._viewModel = StateObject(wrappedValue: ShowDetailsViewModel(tvShow: tvShow, networkManager: networkManager))
+    }
+
 
     var body: some View {
         ScrollView {
@@ -114,8 +117,7 @@ struct ShowDetailsView: View {
                     }
 
                     Button {
-                        viewModel.coordinator.navigateToEpisodes(tvShow: viewModel.tvShow,
-                                                                 seasons: viewModel.seasons)
+                        viewModel.presentShowEpisodes.toggle()
                     } label: {
                         HStack {
                             Text("Seasons")
@@ -132,7 +134,7 @@ struct ShowDetailsView: View {
                     .padding()
 
                     Button {
-                        viewModel.coordinator.navigateToCast(tvShow: viewModel.tvShow)
+                        viewModel.presentShowCast.toggle()
                     } label: {
                         HStack {
                             Text("Cast")
@@ -153,6 +155,14 @@ struct ShowDetailsView: View {
             }
         }
         .navigationTitle(viewModel.tvShow.name ?? "")
+        .navigationDestination(isPresented: $viewModel.presentShowEpisodes) {
+            ShowEpisodesView(tvShow: viewModel.tvShow,
+                             seasons: viewModel.seasons,
+                             networkManager: viewModel.networkManager)
+        }
+        .navigationDestination(isPresented: $viewModel.presentShowCast) {
+            CastView(tvShow: viewModel.tvShow, networkManager: viewModel.networkManager)
+        }
     }
 
     private func addShowToFavorites() {
@@ -173,7 +183,5 @@ struct ShowDetailsView: View {
 }
 
 #Preview {
-    ShowDetailsView(viewModel: ShowDetailsViewModel(tvShow: TvMazeStore.getTvShow(),
-                                                    networkManager: NetworkManager(),
-                                                    coordinator: ShowCoordinatorView()))
+    ShowDetailsView(tvShow: TvMazeStore.getTvShow(), networkManager: NetworkManager())
 }

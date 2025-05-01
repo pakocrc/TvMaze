@@ -13,14 +13,12 @@ final class ShowEpisodesViewModel: ObservableObject {
 
     let tvShow: TvMazeShow
     let seasons: [TvMazeSeason]
-    let networkManager: NetworkManager
-    let coordinator: ShowCoordinatorView
+    let networkManager: NetworkProtocol
 
-    init(tvShow: TvMazeShow, seasons: [TvMazeSeason], networkManager: NetworkManager, coordinator: ShowCoordinatorView) {
+    init(tvShow: TvMazeShow, seasons: [TvMazeSeason], networkManager: NetworkProtocol) {
         self.tvShow = tvShow
         self.seasons = seasons
         self.networkManager = networkManager
-        self.coordinator = coordinator
 
         Task {
             await fetchEpisodeList()
@@ -42,6 +40,4 @@ final class ShowEpisodesViewModel: ObservableObject {
             }
         }
     }
-
-
 }

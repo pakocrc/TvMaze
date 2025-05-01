@@ -9,10 +9,16 @@ import SwiftUI
 import SwiftData
 
 struct FavoritesView: View {
-    @StateObject var viewModel: FavoritesViewModel
-
     @Environment(\.modelContext) private var modelContext
     @Query private var favoriteShows: [TvMazeShow]
+
+    @State var selectedTvShow: TvMazeShow?
+
+    let networkManager: NetworkProtocol
+
+    init(networkManager: NetworkProtocol) {
+        self.networkManager = networkManager
+    }
 
     var body: some View {
         ScrollView {
@@ -21,11 +27,11 @@ struct FavoritesView: View {
 
             } else {
                 VStack {
-                    ForEach(favoriteShows) { show in
+                    ForEach(favoriteShows) { tvShow in
                         Button {
-                            viewModel.coordinator.navigateToDetail(tvShow: show)
+                            selectedTvShow = tvShow
                         } label: {
-                            ShowRowView(show: show)
+                            ShowRowView(show: tvShow)
                                 .frame(height: 200, alignment: .center)
                         }
                         .foregroundStyle(.primary)
@@ -39,11 +45,13 @@ struct FavoritesView: View {
         .scrollTargetLayout()
         .scrollTargetBehavior(.viewAligned)
         .navigationTitle("TvMaze Favorites")
-        .applyNavigation(coordinator: viewModel.coordinator)
+        .navigationDestination(item: $selectedTvShow) { tvShow in
+            ShowDetailsView(tvShow: tvShow, networkManager: networkManager)
+        }
     }
 }
 
 #Preview {
-    FavoritesView(viewModel: FavoritesViewModel(coordinator: ShowCoordinatorView()))
+    FavoritesView(networkManager: NetworkManager())
         .modelContainer(for: TvMazeShow.self, inMemory: true)
 }

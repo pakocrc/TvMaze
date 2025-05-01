@@ -14,17 +14,16 @@ final class ShowListViewModel: ObservableObject {
     @Published var refreshItem: TvMazeShow?
     @Published var searchCriteria: String = ""
     @Published var isSearching = false
+    @Published var selectedTvShow: TvMazeShow?
 
     private var isLoading = false
     private var page = 0
     private var cancellables = Set<AnyCancellable>()
 
-    let networkManager: NetworkManager
-    let coordinator: ShowCoordinatorView
+    let networkManager: NetworkProtocol
 
-    init(networkManager: NetworkManager, coordinator: ShowCoordinatorView) {
+    init(networkManager: NetworkProtocol) {
         self.networkManager = networkManager
-        self.coordinator = coordinator
 
         Task {
             await fetchShowsList()

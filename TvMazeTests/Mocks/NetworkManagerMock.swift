@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class NetworkManagerMock: Networking {
+final class NetworkManagerMock: NetworkProtocol {
     func fetchShowsList(page: Int) async throws -> [TvMazeShow] {
         debugPrint("Getting TvShows mock data...")
 

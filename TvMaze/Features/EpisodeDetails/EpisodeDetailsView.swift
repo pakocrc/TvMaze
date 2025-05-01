@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct EpisodeDetailsView: View {
-    @StateObject var viewModel: EpisodeDetailsViewModel
+    let episode: TvMazeEpisode
 
     var body: some View {
         GeometryReader { proxy in
             ScrollView {
                 VStack {
-                    CachedAsyncImage(stringUrl: viewModel.episode.image?.medium ?? "", placeholder: .wallpaper)
+                    CachedAsyncImage(stringUrl: episode.image?.medium ?? "", placeholder: .wallpaper)
 
                     VStack(alignment: .leading) {
                         HStack(alignment: .top) {
-                            Text("\(viewModel.episode.number ?? 0).")
-                            Text(viewModel.episode.name ?? "")
+                            Text("\(episode.number ?? 0).")
+                            Text(episode.name ?? "")
                         }
                         .font(.title)
                         .bold()
@@ -32,7 +32,7 @@ struct EpisodeDetailsView: View {
                             Text("Season:")
                                 .font(.body)
                                 .bold()
-                            Text("\(viewModel.episode.season ?? 0)")
+                            Text("\(episode.season ?? 0)")
                         }
                         .padding(.horizontal)
                         
@@ -44,7 +44,7 @@ struct EpisodeDetailsView: View {
                                 .font(.body)
                                 .bold()
                             
-                            Text(viewModel.episode.summary ?? "N/A")
+                            Text(episode.summary ?? "N/A")
                         }
                         .padding(.horizontal)
                     }
@@ -58,6 +58,5 @@ struct EpisodeDetailsView: View {
 }
 
 #Preview {
-    EpisodeDetailsView(viewModel: EpisodeDetailsViewModel(episode: TvMazeStore.getEpisode(),
-                                                          coordinator: ShowCoordinatorView()))
+    EpisodeDetailsView(episode: TvMazeStore.getEpisode())
 }

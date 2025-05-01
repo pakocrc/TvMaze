@@ -5,32 +5,34 @@
 //  Created by Francisco Cordoba on 18/4/25.
 //
 
-import Foundation
-import SwiftUI
-
-enum ShowSteps: Steps {
-    case showList
-    case favoritesList
-    case showDetail(TvMazeShow)
-    case episodes(TvMazeShow, [TvMazeSeason])
-    case cast(TvMazeShow)
-    case episodeDetail(TvMazeEpisode)
-}
-
-extension ShowSteps: Identifiable, Equatable {
-    var id: UUID {
-        UUID()
-    }
-
-    static func == (lhs: ShowSteps, rhs: ShowSteps) -> Bool {
-        return lhs.id == rhs.id
-    }
-
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-}
-
+//import Foundation
+//import SwiftUI
+//
+//protocol Steps: Equatable, Hashable { }
+//
+//enum ShowSteps: Steps {
+//    case showList
+//    case favoritesList
+//    case showDetail(TvMazeShow)
+//    case episodes(TvMazeShow, [TvMazeSeason])
+//    case cast(TvMazeShow)
+//    case episodeDetail(TvMazeEpisode)
+//}
+//
+//extension ShowSteps: Identifiable {
+//    var id: UUID {
+//        UUID()
+//    }
+//
+//    static func == (lhs: ShowSteps, rhs: ShowSteps) -> Bool {
+//        return lhs.id == rhs.id
+//    }
+//
+//    func hash(into hasher: inout Hasher) {
+//        hasher.combine(id)
+//    }
+//}
+/*
 final class ShowCoordinatorView: ObservableObject {
     @Published var path = [ShowSteps]()
     let networkService: NetworkManager
@@ -54,6 +56,10 @@ final class ShowCoordinatorView: ObservableObject {
     func navigateToCast(tvShow: TvMazeShow) {
         path.append(.cast(tvShow))
     }
+
+    func pop() {
+        path.removeLast()
+    }
 }
 
 extension ShowCoordinatorView: Coordinator {
@@ -75,3 +81,4 @@ extension ShowCoordinatorView: Coordinator {
         }
     }
 }
+*/

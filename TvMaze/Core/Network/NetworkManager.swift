@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Networking {
+protocol NetworkProtocol {
     func fetchShowsList(page: Int) async throws -> [TvMazeShow]
     func fetchSeasonList(showId: String) async throws -> [TvMazeSeason]
     func fetchEpisodeList(showId: String) async throws -> [TvMazeEpisode]
@@ -16,7 +16,7 @@ protocol Networking {
     func fetchImage(url: String) async throws -> Data
 }
 
-final class NetworkManager: Networking {
+final class NetworkManager: NetworkProtocol {
     // MARK: - Singleton
 //    static let shared = NetworkManager()
     

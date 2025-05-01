@@ -10,6 +10,12 @@ import SwiftUI
 struct ShowEpisodesView: View {
     @StateObject var viewModel: ShowEpisodesViewModel
 
+    init(tvShow: TvMazeShow, seasons: [TvMazeSeason], networkManager: NetworkProtocol) {
+        self._viewModel = StateObject(wrappedValue: ShowEpisodesViewModel(tvShow: tvShow,
+                                                                          seasons: seasons,
+                                                                          networkManager: networkManager))
+    }
+
     var body: some View {
         if viewModel.seasonEpisodes.isEmpty {
             ContentUnavailableView("Loading...", systemImage: "arrow.down.circle.dotted", description: Text("Loading Content"))
@@ -23,7 +29,7 @@ struct ShowEpisodesView: View {
                         } else {
                             ForEach(seasonEpisodes.episodes, id: \.id) { episode in
                                 Button {
-                                    viewModel.coordinator.navigateToEpisodeDetails(episode: episode)
+                                    viewModel.selectedEpisode = episode
                                 } label: {
                                     HStack {
                                         Text("\(episode.number ?? 0).")
@@ -37,13 +43,15 @@ struct ShowEpisodesView: View {
                 }
             }
             .navigationTitle("\(viewModel.tvShow.name ?? "") Seasons")
+            .navigationDestination(item: $viewModel.selectedEpisode) { episode in
+                EpisodeDetailsView(episode: episode)
+            }
         }
     }
 }
 
 #Preview {
-    ShowEpisodesView(viewModel: ShowEpisodesViewModel(tvShow: TvMazeStore.getTvShow(),
-                                                      seasons: TvMazeStore.getSeasons(),
-                                                      networkManager: NetworkManager(),
-                                                      coordinator: ShowCoordinatorView()))
+    ShowEpisodesView(tvShow: TvMazeStore.getTvShow(),
+                     seasons: TvMazeStore.getSeasons(),
+                     networkManager: NetworkManager())
 }

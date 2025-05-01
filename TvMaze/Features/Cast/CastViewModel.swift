@@ -11,14 +11,13 @@ final class CastViewModel: ObservableObject {
     @MainActor @Published var cast = [TvMazeCast]()
 
     let tvShow: TvMazeShow
-    let networkManager: NetworkManager
-    let coordinator: ShowCoordinatorView
+    let networkManager: NetworkProtocol
 
-    init(tvShow: TvMazeShow, networkManager: NetworkManager, coordinator: ShowCoordinatorView) {
+    init(tvShow: TvMazeShow, networkManager: NetworkProtocol) {
         self.tvShow = tvShow
         self.networkManager = networkManager
-        self.coordinator = coordinator
-        self.fetchCast()
+
+        fetchCast()
     }
 
     func fetchCast() {

@@ -23,27 +23,11 @@ struct CastView: View {
                 LazyVStack(alignment: .leading) {
                     ForEach(viewModel.cast) { cast in
 
-                        Button(action: {
-                            viewModel.selectedPersonId = String(cast.person.id)
-                        }) {
-                            HStack(alignment: .center) {
-                                CachedAsyncImage(stringUrl: cast.character.image?.medium ?? "")
-                                .frame(width: 150, alignment: .center)
-
-                                VStack(alignment: .leading) {
-                                    Text(cast.character.name)
-                                        .font(.headline)
-                                        .bold()
-                                        .multilineTextAlignment(.leading)
-
-                                    Text(cast.person.name ?? "" )
-                                        .font(.body)
-                                        .multilineTextAlignment(.leading)
-                                }
+                        CastViewRow(cast: cast)
+                            .onTapGesture {
+                                viewModel.selectedPersonId = String(cast.person.id)
                             }
-                        }
-                        .foregroundStyle(.primary)
-                        .padding()
+                            .padding(.horizontal)
                     }
                 }
             }

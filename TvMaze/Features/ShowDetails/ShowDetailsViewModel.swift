@@ -8,10 +8,11 @@
 import Foundation
 
 final class ShowDetailsViewModel: ObservableObject {
-    @Published var seasons = [TvMazeSeason]()
+    @MainActor @Published var seasons = [TvMazeSeason]()
     @Published var isPresentingImageFullView = false
     @Published var presentShowEpisodes = false
     @Published var presentShowCast = false
+    @Published var presentShowImages = false
 
     let tvShow: TvMazeShow
     let networkManager: NetworkProtocol
@@ -20,16 +21,17 @@ final class ShowDetailsViewModel: ObservableObject {
         self.tvShow = tvShow
         self.networkManager = networkManager
 
-        Task {
-            await fetchEpisodeList()
-        }
+        self.fetchEpisodeList()
     }
 
-    @MainActor
     func fetchEpisodeList() {
         Task {
             do {
-                self.seasons = try await networkManager.fetchSeasonList(showId: String(self.tvShow.showId))
+                let newSeasons = try await networkManager.fetchSeasonList(showId: String(self.tvShow.id))
+
+                DispatchQueue.main.async { [weak self] in
+                    self?.seasons = newSeasons
+                }
 
             } catch let error {
                 debugPrint(error.localizedDescription)

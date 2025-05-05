@@ -12,11 +12,13 @@ import SwiftData
 final class TvMazeNetwork: Codable {
     var id: Int?
     var name: String?
+    var country: TvMazeCountry?
     var officialSite: String?
     
-    init(id: Int?, name: String?, officialSite: String?) {
+    init(id: Int?, name: String?, country: TvMazeCountry?, officialSite: String?) {
         self.id = id
         self.name = name
+        self.country = country
         self.officialSite = officialSite
     }
     
@@ -25,6 +27,7 @@ final class TvMazeNetwork: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decodeIfPresent(Int.self, forKey: .id)
         name = try container.decodeIfPresent(String.self, forKey: .name)
+        country = try container.decodeIfPresent(TvMazeCountry.self, forKey: .country)
         officialSite = try container.decodeIfPresent(String.self, forKey: .officialSite)
     }
     
@@ -33,6 +36,7 @@ final class TvMazeNetwork: Codable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(id, forKey: .id)
         try container.encodeIfPresent(name, forKey: .name)
+        try container.encodeIfPresent(country, forKey: .country)
         try container.encodeIfPresent(officialSite, forKey: .officialSite)
     }
     
@@ -40,6 +44,7 @@ final class TvMazeNetwork: Codable {
     private enum CodingKeys: String, CodingKey {
         case id
         case name
+        case country
         case officialSite
     }
 }

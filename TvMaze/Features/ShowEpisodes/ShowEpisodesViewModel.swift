@@ -29,7 +29,7 @@ final class ShowEpisodesViewModel: ObservableObject {
     func fetchEpisodeList() {
         Task {
             do {
-                let episodes = try await networkManager.fetchEpisodeList(showId: self.tvShow.showId.description)
+                let episodes = try await networkManager.fetchEpisodeList(showId: self.tvShow.id)
 
                 self.seasonEpisodes = self.seasons.map({ season in
                     return TvMaseSeasonEpisodes(season: season, episodes: episodes.filter({ $0.season == season.number }))

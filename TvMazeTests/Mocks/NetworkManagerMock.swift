@@ -120,4 +120,8 @@ final class NetworkManagerMock: NetworkProtocol {
             throw NetworkError.decodingFailed
         }
     }
+
+    func fetchShowImages(showId: String) async throws -> [TvMazeShowImage] {
+        return []
+    }
 }

@@ -25,9 +25,13 @@ final class CastViewModel: ObservableObject {
     func fetchCast() {
         Task.detached { [weak self] in
             do {
-                guard let fetchedCast = try await self?.networkManager.fetchCast(showId: self?.tvShow.showId.description ?? "") else { return }
 
-                RunLoop.main.perform { [weak self] in
+//#if DEBUG
+//                let fetchedCast = TvMazeStore.getCast()
+//#else
+            guard let fetchedCast = try await self?.networkManager.fetchCast(showId: self?.tvShow.id ?? "") else { return }
+//#endif
+                DispatchQueue.main.async { [weak self] in
                     self?.cast = fetchedCast
                 }
 

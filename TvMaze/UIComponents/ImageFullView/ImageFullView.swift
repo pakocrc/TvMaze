@@ -17,6 +17,13 @@ struct ImageFullView: View {
     @State var offset: CGSize = .zero
     @State var lastOffset: CGSize = .zero
 
+    init(title: String, imageUrl: String) {
+        self.title = title
+        self.imageUrl = imageUrl
+
+        debugPrint("ImageFullView:", title, imageUrl)
+    }
+
     var body: some View {
         GeometryReader { proxy in
             CachedAsyncImage(stringUrl: imageUrl)

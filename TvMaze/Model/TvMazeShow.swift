@@ -10,8 +10,7 @@ import SwiftData
 
 @Model
 class TvMazeShow: Identifiable {
-    var id = UUID()
-    var showId: Int
+    var id: String
     var url: String?
     var name: String?
     var type: String?
@@ -26,15 +25,15 @@ class TvMazeShow: Identifiable {
     var schedule: TvMazeSchedule?
     var rating: TvMazeRating?
     var weight: Int?
-//    let network: TvMazeNetwork?
+    var network: TvMazeNetwork?
     var webChannel: TvMazeNetwork?
     var image: TvMazeImage?
     var summary: String?
     var updated: Int?
     var isFavorite: Bool
 
-    init(showId: Int, url: String?, name: String?, type: String?, language: String?, genres: [String]?, status: String?, runtime: Int?, averageRuntime: Int?, premiered: String?, ended: String?, officialSite: String?, schedule: TvMazeSchedule?, rating: TvMazeRating?, weight: Int?, image: TvMazeImage?, summary: String? = nil, updated: Int?) {
-        self.showId = showId
+    init(id: String, url: String?, name: String?, type: String?, language: String?, genres: [String]?, status: String?, runtime: Int?, averageRuntime: Int?, premiered: String?, ended: String?, officialSite: String?, schedule: TvMazeSchedule?, rating: TvMazeRating?, weight: Int?, image: TvMazeImage?, summary: String? = nil, updated: Int?) {
+        self.id = id
         self.url = url
         self.name = name
         self.type = type
@@ -57,7 +56,7 @@ class TvMazeShow: Identifiable {
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        showId = try container.decode(Int.self, forKey: .id)
+        id = try container.decode(Int.self, forKey: .id).description
         url = try container.decodeIfPresent(String.self, forKey: .url)
         name = try container.decodeIfPresent(String.self, forKey: .name)
         type = try container.decodeIfPresent(String.self, forKey: .type)
@@ -100,7 +99,7 @@ extension TvMazeShow: Codable {
 
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(showId, forKey: .id)
+        try container.encode(id, forKey: .id)
         try container.encodeIfPresent(url, forKey: .url)
         try container.encodeIfPresent(name, forKey: .name)
         try container.encodeIfPresent(type, forKey: .type)

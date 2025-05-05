@@ -26,8 +26,9 @@ TvMaze app
 Bonus (Optional)
 
 
-● Cache Image working properly
-● Fix Navigation
+● Cache Image working properly ✅
+● Fix Navigation (Coordinator?)
+● Handle errors properly
 
 ● Allow the user to set a PIN number to secure the application and prevent unauthorized users.
 ● For supported phones, the user must be able to choose if they want to enable fingerprint authentication to avoid typing the PIN number while opening the app.
@@ -42,5 +43,5 @@ Bonus (Optional)
 
 
 
-Infinite scroll
-Image Cache
+Infinite scroll ✅
+Image Cache ✅

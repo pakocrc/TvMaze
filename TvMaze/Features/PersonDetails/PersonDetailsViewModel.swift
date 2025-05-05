@@ -15,19 +15,13 @@ final class PersonDetailsViewModel: ObservableObject {
     let personId: String
     let networkManager: NetworkProtocol
 
-    private var cancellables = Set<AnyCancellable>()
-
     init(personId: String, networkManager: NetworkProtocol) {
         self.personId = personId
         self.networkManager = networkManager
-
-        Task {
-            await self.fetchPersonDetails()
-        }
     }
 
     @MainActor
-    private func fetchPersonDetails() async {
+    func fetchPersonDetails() async {
         do {
             self.person = try await networkManager.fetchPersonDetails(id: self.personId)
 

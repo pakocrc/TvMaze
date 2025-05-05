@@ -34,7 +34,7 @@ final class ShowListViewModel: ObservableObject {
 
     private func bindPublishers() {
         $searchCriteria
-            .debounce(for: .seconds(0.3), scheduler: RunLoop.main)
+            .debounce(for: .seconds(0.3), scheduler: DispatchQueue.main)
             .filter({ $0.count > 3 })
             .sink(receiveValue: { [weak self] searchCriteria in
 
@@ -45,7 +45,7 @@ final class ShowListViewModel: ObservableObject {
 
         $isSearching
             .dropFirst()
-            .debounce(for: .seconds(0.2), scheduler: RunLoop.main)
+            .debounce(for: .seconds(0.2), scheduler: DispatchQueue.main)
             .sink { [weak self] isSearching in
                 if !isSearching {
                     self?.searchTvShowList.removeAll()

@@ -57,6 +57,9 @@
 		8AB9335D2DB9F18600812A3A /* TvMazeGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB9335C2DB9F18600812A3A /* TvMazeGender.swift */; };
 		8AB933602DB9F2A700812A3A /* CastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB9335F2DB9F2A100812A3A /* CastViewModel.swift */; };
 		8AB933622DB9F2BD00812A3A /* CastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB933612DB9F2BD00812A3A /* CastView.swift */; };
+		8ABA36492DC586B300C93BFC /* ShowImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA36482DC586B300C93BFC /* ShowImagesView.swift */; };
+		8ABA364B2DC5889200C93BFC /* TvMazeShowImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA364A2DC5889200C93BFC /* TvMazeShowImage.swift */; };
+		8ABA364D2DC58BE100C93BFC /* ShowImagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA364C2DC58BE100C93BFC /* ShowImagesViewModel.swift */; };
 		8ABD8C9F2DC1904800EA9D0F /* NetworkManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABD8C9E2DC1903400EA9D0F /* NetworkManagerMock.swift */; };
 		8ABD8CA42DC191FB00EA9D0F /* TvMazeCastSuccessful.json in Resources */ = {isa = PBXBuildFile; fileRef = 8ABD8CA32DC191F400EA9D0F /* TvMazeCastSuccessful.json */; };
 		8ABD8CA82DC1927800EA9D0F /* TvMazeCastUnsuccessful.json in Resources */ = {isa = PBXBuildFile; fileRef = 8ABD8CA72DC1927300EA9D0F /* TvMazeCastUnsuccessful.json */; };
@@ -65,6 +68,7 @@
 		8ABD8CAE2DC193B000EA9D0F /* TvMazeEpisodesUnsuccessful.json in Resources */ = {isa = PBXBuildFile; fileRef = 8ABD8CAD2DC193AA00EA9D0F /* TvMazeEpisodesUnsuccessful.json */; };
 		8ABD8CB02DC193EB00EA9D0F /* TvMazeSeasonsUnsuccessful.json in Resources */ = {isa = PBXBuildFile; fileRef = 8ABD8CAF2DC193E500EA9D0F /* TvMazeSeasonsUnsuccessful.json */; };
 		8ABD8CB22DC1940C00EA9D0F /* TvMazeShowsUnsuccessful.json in Resources */ = {isa = PBXBuildFile; fileRef = 8ABD8CB12DC1940C00EA9D0F /* TvMazeShowsUnsuccessful.json */; };
+		8ABF05A12DC9722D005BCD55 /* CastViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABF05A02DC9722D005BCD55 /* CastViewRow.swift */; };
 		8AF384152DC0382B00EAE8B0 /* ImageFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF384142DC0382B00EAE8B0 /* ImageFullView.swift */; };
 /* End PBXBuildFile section */
 
@@ -139,6 +143,9 @@
 		8AB9335C2DB9F18600812A3A /* TvMazeGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvMazeGender.swift; sourceTree = "<group>"; };
 		8AB9335F2DB9F2A100812A3A /* CastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastViewModel.swift; sourceTree = "<group>"; };
 		8AB933612DB9F2BD00812A3A /* CastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastView.swift; sourceTree = "<group>"; };
+		8ABA36482DC586B300C93BFC /* ShowImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImagesView.swift; sourceTree = "<group>"; };
+		8ABA364A2DC5889200C93BFC /* TvMazeShowImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvMazeShowImage.swift; sourceTree = "<group>"; };
+		8ABA364C2DC58BE100C93BFC /* ShowImagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImagesViewModel.swift; sourceTree = "<group>"; };
 		8ABD8C9E2DC1903400EA9D0F /* NetworkManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerMock.swift; sourceTree = "<group>"; };
 		8ABD8CA32DC191F400EA9D0F /* TvMazeCastSuccessful.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TvMazeCastSuccessful.json; sourceTree = "<group>"; };
 		8ABD8CA72DC1927300EA9D0F /* TvMazeCastUnsuccessful.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TvMazeCastUnsuccessful.json; sourceTree = "<group>"; };
@@ -147,6 +154,7 @@
 		8ABD8CAD2DC193AA00EA9D0F /* TvMazeEpisodesUnsuccessful.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TvMazeEpisodesUnsuccessful.json; sourceTree = "<group>"; };
 		8ABD8CAF2DC193E500EA9D0F /* TvMazeSeasonsUnsuccessful.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TvMazeSeasonsUnsuccessful.json; sourceTree = "<group>"; };
 		8ABD8CB12DC1940C00EA9D0F /* TvMazeShowsUnsuccessful.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TvMazeShowsUnsuccessful.json; sourceTree = "<group>"; };
+		8ABF05A02DC9722D005BCD55 /* CastViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastViewRow.swift; sourceTree = "<group>"; };
 		8AF384142DC0382B00EAE8B0 /* ImageFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFullView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -319,11 +327,12 @@
 		8A9444142DB1A4FB00797DD9 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				8A89712A2DC30C840096B8E4 /* PersonDetails */,
+				8ABA36472DC586A000C93BFC /* ShowImages */,
 				8AB9335E2DB9F28300812A3A /* Cast */,
-				8A0CC7D42DB362640014320F /* Favorites */,
 				8A0CC7BB2DB328590014320F /* EpisodeDetails */,
+				8A0CC7D42DB362640014320F /* Favorites */,
 				8A9444152DB1A50800797DD9 /* Home */,
+				8A89712A2DC30C840096B8E4 /* PersonDetails */,
 				8A9444262DB1C49700797DD9 /* ShowDetails */,
 				8A0CC7B62DB322970014320F /* ShowEpisodes */,
 				8A9444292DB1F69200797DD9 /* ShowList */,
@@ -367,22 +376,23 @@
 		8A94441B2DB1AD3300797DD9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8AB9335C2DB9F18600812A3A /* TvMazeGender.swift */,
-				8AB9335A2DB9F17700812A3A /* TvMazeCountry.swift */,
-				8AB933582DB9F16A00812A3A /* TvMazePerson.swift */,
-				8AB933562DB9F13600812A3A /* TvMazeLinks.swift */,
-				8AB933542DB9F11A00812A3A /* TvMazeCharacter.swift */,
-				8A94441C2DB1AD8000797DD9 /* TvMazeShow.swift */,
-				8A8812932DB2F82A00F21029 /* TvMazeEpisode.swift */,
-				8A8812952DB2F84E00F21029 /* TvMazeRating.swift */,
-				8A8812972DB2F92A00F21029 /* TvMazeDay.swift */,
-				8A8812992DB2F96300F21029 /* TvMazeSchedule.swift */,
-				8A88129B2DB2F97900F21029 /* TvMazeNetwork.swift */,
-				8A88129D2DB2FA1D00F21029 /* TvMazeImage.swift */,
-				8A0CC7B02DB311600014320F /* TvMazeSeason.swift */,
-				8A0CC7B42DB315450014320F /* TvMaseSeasonEpisodes.swift */,
 				8A0CC7C02DB332F00014320F /* SearchTvMazeShow.swift */,
+				8A0CC7B42DB315450014320F /* TvMaseSeasonEpisodes.swift */,
 				8AB933522DB9EF7200812A3A /* TvMazeCast.swift */,
+				8AB933542DB9F11A00812A3A /* TvMazeCharacter.swift */,
+				8AB9335A2DB9F17700812A3A /* TvMazeCountry.swift */,
+				8A8812972DB2F92A00F21029 /* TvMazeDay.swift */,
+				8A8812932DB2F82A00F21029 /* TvMazeEpisode.swift */,
+				8AB9335C2DB9F18600812A3A /* TvMazeGender.swift */,
+				8A88129D2DB2FA1D00F21029 /* TvMazeImage.swift */,
+				8AB933562DB9F13600812A3A /* TvMazeLinks.swift */,
+				8A88129B2DB2F97900F21029 /* TvMazeNetwork.swift */,
+				8AB933582DB9F16A00812A3A /* TvMazePerson.swift */,
+				8A8812952DB2F84E00F21029 /* TvMazeRating.swift */,
+				8A8812992DB2F96300F21029 /* TvMazeSchedule.swift */,
+				8A0CC7B02DB311600014320F /* TvMazeSeason.swift */,
+				8A94441C2DB1AD8000797DD9 /* TvMazeShow.swift */,
+				8ABA364A2DC5889200C93BFC /* TvMazeShowImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -399,7 +409,7 @@
 		8A9444292DB1F69200797DD9 /* ShowList */ = {
 			isa = PBXGroup;
 			children = (
-				8A9444242DB1BE0D00797DD9 /* ShowRowView.swift */,
+				8AF6B4962DC5AACA00FB63BD /* Rows */,
 				8A94442A2DB1F6B700797DD9 /* ShowListView.swift */,
 				8A94442C2DB1F6D900797DD9 /* ShowListViewModel.swift */,
 			);
@@ -417,10 +427,20 @@
 		8AB9335E2DB9F28300812A3A /* Cast */ = {
 			isa = PBXGroup;
 			children = (
+				8ABF059F2DC97227005BCD55 /* Rows */,
 				8AB933612DB9F2BD00812A3A /* CastView.swift */,
 				8AB9335F2DB9F2A100812A3A /* CastViewModel.swift */,
 			);
 			path = Cast;
+			sourceTree = "<group>";
+		};
+		8ABA36472DC586A000C93BFC /* ShowImages */ = {
+			isa = PBXGroup;
+			children = (
+				8ABA364C2DC58BE100C93BFC /* ShowImagesViewModel.swift */,
+				8ABA36482DC586B300C93BFC /* ShowImagesView.swift */,
+			);
+			path = ShowImages;
 			sourceTree = "<group>";
 		};
 		8ABD8C9D2DC1900A00EA9D0F /* Mocks */ = {
@@ -451,12 +471,28 @@
 			path = responses;
 			sourceTree = "<group>";
 		};
+		8ABF059F2DC97227005BCD55 /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				8ABF05A02DC9722D005BCD55 /* CastViewRow.swift */,
+			);
+			path = Rows;
+			sourceTree = "<group>";
+		};
 		8AF384132DC037F600EAE8B0 /* ImageFullView */ = {
 			isa = PBXGroup;
 			children = (
 				8AF384142DC0382B00EAE8B0 /* ImageFullView.swift */,
 			);
 			path = ImageFullView;
+			sourceTree = "<group>";
+		};
+		8AF6B4962DC5AACA00FB63BD /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				8A9444242DB1BE0D00797DD9 /* ShowRowView.swift */,
+			);
+			path = Rows;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -613,6 +649,7 @@
 				8A88129C2DB2F97900F21029 /* TvMazeNetwork.swift in Sources */,
 				8A9444282DB1C4A600797DD9 /* ShowDetailsView.swift in Sources */,
 				8A0CC7BA2DB322BA0014320F /* ShowEpisodesViewModel.swift in Sources */,
+				8ABF05A12DC9722D005BCD55 /* CastViewRow.swift in Sources */,
 				8AB9335D2DB9F18600812A3A /* TvMazeGender.swift in Sources */,
 				8A89712D2DC30CA90096B8E4 /* PersonDetailsView.swift in Sources */,
 				8A9444212DB1AE4500797DD9 /* NetworkManager.swift in Sources */,
@@ -627,12 +664,14 @@
 				8A67EEDA2DB3066A0090F187 /* TvMazeStore.swift in Sources */,
 				8A0CC7BF2DB3287D0014320F /* EpisodeDetailsView.swift in Sources */,
 				8A8812942DB2F82A00F21029 /* TvMazeEpisode.swift in Sources */,
+				8ABA364D2DC58BE100C93BFC /* ShowImagesViewModel.swift in Sources */,
 				8A0CC7B52DB315460014320F /* TvMaseSeasonEpisodes.swift in Sources */,
 				8ABD8C9F2DC1904800EA9D0F /* NetworkManagerMock.swift in Sources */,
 				8A9444172DB1A51700797DD9 /* HomeView.swift in Sources */,
 				8A88129A2DB2F96300F21029 /* TvMazeSchedule.swift in Sources */,
 				8A8971332DC31E640096B8E4 /* PersonDetailsViewModel.swift in Sources */,
 				8AB933532DB9EF7200812A3A /* TvMazeCast.swift in Sources */,
+				8ABA36492DC586B300C93BFC /* ShowImagesView.swift in Sources */,
 				8A94441D2DB1AD8000797DD9 /* TvMazeShow.swift in Sources */,
 				8AB933552DB9F11A00812A3A /* TvMazeCharacter.swift in Sources */,
 				8A9443E92DB1A18B00797DD9 /* TvMazeApp.swift in Sources */,
@@ -643,6 +682,7 @@
 				8AB933602DB9F2A700812A3A /* CastViewModel.swift in Sources */,
 				8A0CC7D32DB351F50014320F /* NavigationSetupModifier.swift in Sources */,
 				8A0CC7CA2DB33E1E0014320F /* ImageCache.swift in Sources */,
+				8ABA364B2DC5889200C93BFC /* TvMazeShowImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

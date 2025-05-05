@@ -18,6 +18,9 @@ struct PersonDetailsView: View {
     var body: some View {
         if viewModel.person == nil {
             ContentUnavailableView("Loading...", systemImage: "arrow.down.circle.dotted", description: Text("Loading Content"))
+                .task {
+                    await viewModel.fetchPersonDetails()
+                }
 
         } else {
             GeometryReader { proxy in
@@ -42,7 +45,7 @@ struct PersonDetailsView: View {
                                 .font(.headline)
                                 .bold()
 
-                            Text(viewModel.person?.country?.name ?? "")
+                            Text("\(viewModel.person?.country?.name ?? "") \(getFlag(viewModel.person?.country?.code ?? ""))")
                         }
 
                         HStack {
@@ -58,7 +61,7 @@ struct PersonDetailsView: View {
                                 .font(.headline)
                                 .bold()
 
-                            Text(viewModel.person?.birthday ?? "")
+                            Text(formatDateAndAge(viewModel.person?.birthday ?? ""))
                         }
 
                         if let url = viewModel.person?.url {
@@ -70,6 +73,41 @@ struct PersonDetailsView: View {
                 .navigationTitle(viewModel.person?.name ?? "")
             }
         }
+    }
+
+    private func formatDateAndAge(_ stringDate: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+
+        if let date = dateFormatter.date(from: stringDate) {
+
+            let age = calculateAge(date)
+            let dateFormatted = date.formatted(date: .abbreviated, time: .omitted)
+            return dateFormatted + age
+        }
+
+        return stringDate
+    }
+
+    private func calculateAge(_ birthDate: Date) -> String {
+        let calendar = Calendar.current
+        let now = Date()
+        let ageComponents = calendar.dateComponents([.year], from: birthDate, to: now)
+
+        if let age = ageComponents.year {
+            return String(" (\(age))")
+        }
+
+        return ""
+    }
+
+    private func getFlag(_ countryCode: String) -> String {
+        countryCode
+            .unicodeScalars
+            .map({ 127397 + $0.value })
+            .compactMap(UnicodeScalar.init)
+            .map(String.init)
+            .joined()
     }
 }
 

@@ -18,12 +18,11 @@ struct ShowDetailsView: View {
         self._viewModel = StateObject(wrappedValue: ShowDetailsViewModel(tvShow: tvShow, networkManager: networkManager))
     }
 
-
     var body: some View {
         ScrollView {
-            VStack(alignment: .center) {
+            VStack(alignment: .center, spacing: 10) {
                 CachedAsyncImage(stringUrl: viewModel.tvShow.image?.medium ?? "")
-                    .frame(height: 400, alignment: .center)
+                    .frame(height: 400, alignment: .center) 
                     .onTapGesture {
                         viewModel.isPresentingImageFullView.toggle()
                     }
@@ -31,8 +30,10 @@ struct ShowDetailsView: View {
                         ImageFullView(title: viewModel.tvShow.name ?? "", imageUrl: viewModel.tvShow.image?.original ?? "")
                     }
 
-                VStack(alignment: .center) {
+                Divider()
+                    .padding(.horizontal)
 
+                VStack(alignment: .center) {
                     HStack {
                         if let average = viewModel.tvShow.rating?.average {
                             Text("Rating:")
@@ -50,7 +51,7 @@ struct ShowDetailsView: View {
                         Button {
                             addShowToFavorites()
                         } label: {
-                            Image(systemName: viewModel.tvShow.isFavorite || favoriteShows.contains(viewModel.tvShow) ? "star.fill" : "star")
+                            Image(systemName: isFavoriteShow() ? "star.fill" : "star")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 25, height: 25, alignment: .center)
@@ -60,19 +61,20 @@ struct ShowDetailsView: View {
                     .padding(.horizontal)
 
                     VStack(alignment: .leading) {
-
+                        Divider()
                         Text("Summary")
                             .font(.body)
                             .bold()
 
                         Text(viewModel.tvShow.summary ?? "")
                             .font(.body)
-                        Divider()
                     }
                     .padding([.top, .horizontal])
 
                     if let days = viewModel.tvShow.schedule?.days {
                         VStack(alignment: .leading) {
+                            Divider()
+
                             Text("Schedule:")
                                 .font(.body)
                                 .bold()
@@ -93,8 +95,6 @@ struct ShowDetailsView: View {
                                     }
                                 }
                             }
-
-                            Divider()
                         }
                         .padding([.top, .horizontal])
                     }
@@ -102,59 +102,80 @@ struct ShowDetailsView: View {
 
                     if let genres = viewModel.tvShow.genres {
                         VStack(alignment: .leading) {
+                            Divider()
                             Text("Genres:")
                                 .font(.body)
                                 .bold()
 
-                            ForEach(genres, id: \.self) { genre in
-                                Text(genre.capitalized)
-                                    .font(.body)
+                            Text(formatGenres(genres))
+                                .font(.body)
+                        }
+                        .padding()
+                    }
+
+                    VStack {
+                        Divider()
+
+                        Button {
+                            viewModel.presentShowEpisodes.toggle()
+                        } label: {
+                            HStack {
+                                Text("Seasons")
+                                    .font(.headline)
+                                    .bold()
+                                    .foregroundStyle(.primary)
+
+                                Spacer()
+
+                                Image(systemName: "chevron.right")
                             }
-
-                            Divider()
                         }
-                        .padding([.top, .horizontal])
+                        .foregroundStyle(.primary)
                     }
-
-                    Button {
-                        viewModel.presentShowEpisodes.toggle()
-                    } label: {
-                        HStack {
-                            Text("Seasons")
-                                .font(.headline)
-                                .bold()
-                                .foregroundStyle(.primary)
-
-                            Spacer()
-
-                            Image(systemName: "chevron.right")
-                        }
-                    }
-                    .foregroundStyle(.primary)
                     .padding()
 
-                    Divider()
-                        .padding(.horizontal)
+                    VStack {
+                        Divider()
 
-                    Button {
-                        viewModel.presentShowCast.toggle()
-                    } label: {
-                        HStack {
-                            Text("Cast")
-                                .font(.headline)
-                                .bold()
-                                .foregroundStyle(.primary)
+                        Button {
+                            viewModel.presentShowCast.toggle()
+                        } label: {
+                            HStack {
+                                Text("Cast")
+                                    .font(.headline)
+                                    .bold()
+                                    .foregroundStyle(.primary)
 
-                            Spacer()
-                            
-                            Image(systemName: "chevron.right")
+                                Spacer()
+
+                                Image(systemName: "chevron.right")
+                            }
                         }
+                        .foregroundStyle(.primary)
                     }
-                    .foregroundStyle(.primary)
+                    .padding()
+
+                    VStack {
+                        Divider()
+
+                        Button {
+                            viewModel.presentShowImages.toggle()
+                        } label: {
+                            HStack {
+                                Text("Images")
+                                    .font(.headline)
+                                    .bold()
+                                    .foregroundStyle(.primary)
+
+                                Spacer()
+
+                                Image(systemName: "chevron.right")
+                            }
+                        }
+                        .foregroundStyle(.primary)
+                    }
                     .padding()
                 }
-
-                Spacer()
             }
         }
         .navigationTitle(viewModel.tvShow.name ?? "")
@@ -166,10 +187,13 @@ struct ShowDetailsView: View {
         .navigationDestination(isPresented: $viewModel.presentShowCast) {
             CastView(tvShow: viewModel.tvShow, networkManager: viewModel.networkManager)
         }
+        .navigationDestination(isPresented: $viewModel.presentShowImages) {
+            ShowImagesView(tvShow: viewModel.tvShow, networkManager: viewModel.networkManager)
+        }
     }
 
     private func addShowToFavorites() {
-        if viewModel.tvShow.isFavorite {
+        if viewModel.tvShow.isFavorite || favoriteShows.contains(viewModel.tvShow) {
             modelContext.delete(viewModel.tvShow)
         } else {
             modelContext.insert(viewModel.tvShow)
@@ -183,8 +207,24 @@ struct ShowDetailsView: View {
 
         viewModel.tvShow.setFavorite()
     }
+
+    private func isFavoriteShow() -> Bool {
+
+        if viewModel.tvShow.isFavorite || favoriteShows.contains(viewModel.tvShow) {
+            return true
+        }
+
+        return false
+    }
+
+    private func formatGenres(_ genres: [String]) -> String {
+        return genres.reduce("") { partialResult, genre in
+            return partialResult + genre.capitalized + (genre == viewModel.tvShow.genres?.last ? "." : ", ")
+        }
+    }
 }
 
 #Preview {
     ShowDetailsView(tvShow: TvMazeStore.getTvShow(), networkManager: NetworkManager())
+//        .modelContainer(for: TvMazeShow.self, inMemory: true)
 }

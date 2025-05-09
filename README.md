@@ -45,3 +45,4 @@ Bonus (Optional)
 
 Infinite scroll ✅
 Image Cache ✅
+String Localization (EN, ES)

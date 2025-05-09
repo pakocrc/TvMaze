@@ -76,3 +76,18 @@ struct ShowListView: View {
 #Preview {
     ShowListView(networkManager: NetworkManager())
 }
+
+enum TestNames: CustomStringConvertible {
+    case one, two, three
+
+    var description: String {
+        switch self {
+            case .one:
+                "One"
+            case .two:
+                "Two"
+            default:
+                "Three"
+        }
+    }
+}

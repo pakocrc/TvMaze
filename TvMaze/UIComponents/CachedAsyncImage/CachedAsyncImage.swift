@@ -23,8 +23,9 @@ struct CachedAsyncImage: View {
 
     var body: some View {
 
-        if let imageData = ImageCache.shared.object(for: stringUrl) {
-            imageData
+        if let imageData = ImageCache.shared.object(for: stringUrl), let uiImage = UIImage(data: imageData) {
+
+            Image(uiImage: uiImage)
                 .resizable()
                 .scaledToFit()
                 .clipped()
@@ -55,7 +56,9 @@ struct CachedAsyncImage: View {
                             .clipShape(.rect(cornerRadius: 2))
                             .padding(.horizontal)
                             .task {
-                                ImageCache.shared.setObject(image: image, for: stringUrl)
+                                if let pngData = ImageRenderer(content: image).uiImage?.pngData() {
+                                    ImageCache.shared.setObject(imageData: pngData, for: stringUrl)
+                                }
                             }
                     default:
                         Image(placeholder.rawValue)

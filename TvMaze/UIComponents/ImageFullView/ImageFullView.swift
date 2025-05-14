@@ -19,6 +19,7 @@ struct ImageFullView: View {
     @State var lastOffset: CGSize = .zero
 
 //    @State var isZoomed = false
+    @State var isDownloadableImage = false
 
     init(title: String, imageUrl: String) {
         self.title = title
@@ -28,7 +29,7 @@ struct ImageFullView: View {
     var body: some View {
         NavigationStack {
             GeometryReader { proxy in
-                CachedAsyncImage(stringUrl: imageUrl)
+                CachedAsyncImage(stringUrl: imageUrl, isDownloadableImage: $isDownloadableImage)
                     .frame(width: proxy.size.width, height: proxy.size.height)
                     .scaleEffect(scale)
                     .offset(offset)
@@ -92,12 +93,14 @@ struct ImageFullView: View {
                     }
                 }
 
-                ToolbarItem(placement: .primaryAction) {
-                    Button {
-                        savePhoto()
-                    } label: {
-                        Image(systemName: "arrow.down.circle")
-                            .foregroundStyle(Color.primary)
+                if isDownloadableImage {
+                    ToolbarItem(placement: .primaryAction) {
+                        Button {
+                            savePhoto()
+                        } label: {
+                            Image(systemName: "arrow.down.circle")
+                                .foregroundStyle(Color.primary)
+                        }
                     }
                 }
             }

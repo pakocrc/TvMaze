@@ -5,6 +5,7 @@
 //  Created by Francisco Cordoba on 17/4/25.
 //
 
+import Foundation
 import SwiftUI
 import SwiftData
 

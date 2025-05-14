@@ -16,9 +16,12 @@ struct CachedAsyncImage: View {
     let stringUrl: String
     let placeholder: PlaceholderImage
 
-    init(stringUrl: String, placeholder: PlaceholderImage = PlaceholderImage.poster) {
+    @Binding var isDownloadableImage: Bool
+
+    init(stringUrl: String, placeholder: PlaceholderImage = PlaceholderImage.poster, isDownloadableImage: Binding<Bool>? = nil) {
         self.stringUrl = stringUrl
         self.placeholder = placeholder
+        self._isDownloadableImage = isDownloadableImage ?? .constant(false)
     }
 
     var body: some View {
@@ -31,6 +34,9 @@ struct CachedAsyncImage: View {
                 .clipped()
                 .clipShape(.rect(cornerRadius: 2))
                 .padding(.horizontal)
+                .task {
+                    isDownloadableImage = true
+                }
 
         } else {
             AsyncImage(url: URL(string: stringUrl)) { phase in
@@ -59,6 +65,7 @@ struct CachedAsyncImage: View {
                                 if let pngData = ImageRenderer(content: image).uiImage?.pngData() {
                                     ImageCache.shared.setObject(imageData: pngData, for: stringUrl)
                                 }
+                                isDownloadableImage = true
                             }
                     default:
                         Image(placeholder.rawValue)

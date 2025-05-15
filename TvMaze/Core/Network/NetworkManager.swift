@@ -19,9 +19,6 @@ protocol NetworkProtocol {
 }
 
 final class NetworkManager: NetworkProtocol {
-    // MARK: - Singleton
-//    static let shared = NetworkManager()
-
     // MARK: - Private
     private let baseUrl = "https://api.tvmaze.com"
     
@@ -33,8 +30,6 @@ final class NetworkManager: NetworkProtocol {
         guard let url = URL(string: String("\(baseUrl)/shows?page=\(String(page))")) else {
             throw NetworkError.invalidUrl
         }
-        
-//        debugPrint("🛜 Url:", url.absoluteString)
         
         do {
             let (data, response) = try await URLSession.shared.data(from: url)
@@ -57,8 +52,6 @@ final class NetworkManager: NetworkProtocol {
             throw NetworkError.invalidUrl
         }
         
-//        debugPrint("🛜 Url:", url.absoluteString)
-        
         do {
             let (data, response) = try await URLSession.shared.data(from: url)
 
@@ -79,8 +72,6 @@ final class NetworkManager: NetworkProtocol {
         guard let url = URL(string: String("\(baseUrl)/shows/\(showId)/episodes")) else {
             throw NetworkError.invalidUrl
         }
-        
-//        debugPrint("🛜 Url:", url.absoluteString)
         
         do {
             let (data, response) = try await URLSession.shared.data(from: url)
@@ -103,8 +94,6 @@ final class NetworkManager: NetworkProtocol {
             throw NetworkError.invalidUrl
         }
         
-//        debugPrint("🛜 Url:", url.absoluteString)
-        
         do {
             let (data, response) = try await URLSession.shared.data(from: url)
 
@@ -126,8 +115,6 @@ final class NetworkManager: NetworkProtocol {
             throw NetworkError.invalidUrl
         }
 
-//        debugPrint("🛜 Url:", url.absoluteString)
-
         do {
             let (data, response) = try await URLSession.shared.data(from: url)
 
@@ -148,8 +135,6 @@ final class NetworkManager: NetworkProtocol {
             throw NetworkError.invalidUrl
         }
 
-//        debugPrint("🛜 Image Url:", url.absoluteString)
-
         do {
             let (data, response) = try await URLSession.shared.data(from: url)
 
@@ -169,7 +154,6 @@ final class NetworkManager: NetworkProtocol {
         guard let url = URL(string: String("\(baseUrl)/people/\(id)")) else {
             throw NetworkError.invalidUrl
         }
-        //        debugPrint("🛜 Url:", url.absoluteString)
 
         do {
             let (data, response) = try await URLSession.shared.data(from: url)
@@ -191,7 +175,6 @@ final class NetworkManager: NetworkProtocol {
         guard let url = URL(string: String("\(baseUrl)/shows/\(showId)/images")) else {
             throw NetworkError.invalidUrl
         }
-        //        debugPrint("🛜 Url:", url.absoluteString)
 
         do {
             let (data, response) = try await URLSession.shared.data(from: url)

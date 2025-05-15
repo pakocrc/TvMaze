@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-class TvMazeShow: Identifiable {
+final class TvMazeShow: Identifiable, Sendable {
     var id: String
     var url: String?
     var name: String?

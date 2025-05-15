@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ShowListView: View {
     @StateObject var viewModel: ShowListViewModel
+    @State private var isFirstTimeLoading = false
 
     init(networkManager: NetworkProtocol) {
         self._viewModel = StateObject(wrappedValue: ShowListViewModel(networkManager: networkManager))
@@ -69,25 +70,23 @@ struct ShowListView: View {
                 ShowDetailsView(tvShow: tvShow, networkManager: viewModel.networkManager)
             }
             .navigationTitle("TvMaze")
+            .task {
+                if !isFirstTimeLoading {
+                    isFirstTimeLoading = true
+                    await viewModel.fetchShowsList()
+                }
+            }
+            .alert("Alert", isPresented: $viewModel.displayAlert, actions: {
+                Button("Close", role: .cancel) {
+                    viewModel.displayAlert.toggle()
+                }
+            }, message: {
+                Text(viewModel.alertMessage)
+            })
         }
     }
 }
 
 #Preview {
     ShowListView(networkManager: NetworkManager())
-}
-
-enum TestNames: CustomStringConvertible {
-    case one, two, three
-
-    var description: String {
-        switch self {
-            case .one:
-                "One"
-            case .two:
-                "Two"
-            default:
-                "Three"
-        }
-    }
 }

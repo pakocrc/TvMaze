@@ -13,6 +13,7 @@ struct ShowDetailsView: View {
     @Query private var favoriteShows: [TvMazeShow]
 
     @StateObject var viewModel: ShowDetailsViewModel
+    @State private var isFirstTimeLoading = false
 
     init(tvShow: TvMazeShow, networkManager: NetworkProtocol) {
         self._viewModel = StateObject(wrappedValue: ShowDetailsViewModel(tvShow: tvShow, networkManager: networkManager))
@@ -189,6 +190,12 @@ struct ShowDetailsView: View {
         }
         .navigationDestination(isPresented: $viewModel.presentShowImages) {
             ShowImagesView(tvShow: viewModel.tvShow, networkManager: viewModel.networkManager)
+        }
+        .task {
+            if !isFirstTimeLoading {
+                isFirstTimeLoading.toggle()
+                await viewModel.fetchEpisodeList()
+            }
         }
     }
 

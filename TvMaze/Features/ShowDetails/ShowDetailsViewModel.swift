@@ -13,29 +13,26 @@ final class ShowDetailsViewModel: ObservableObject {
     @Published var presentShowEpisodes = false
     @Published var presentShowCast = false
     @Published var presentShowImages = false
-
+    @Published var displayAlert = false
+    @Published var alertMessage = ""
+    
     let tvShow: TvMazeShow
     let networkManager: NetworkProtocol
 
     init(tvShow: TvMazeShow, networkManager: NetworkProtocol) {
         self.tvShow = tvShow
         self.networkManager = networkManager
-
-        self.fetchEpisodeList()
     }
 
-    func fetchEpisodeList() {
-        Task {
-            do {
-                let newSeasons = try await networkManager.fetchSeasonList(showId: String(self.tvShow.id))
+    @MainActor
+    func fetchEpisodeList() async {
+        do {
+            self.seasons = try await networkManager.fetchSeasonList(showId: String(self.tvShow.id))
 
-                DispatchQueue.main.async { [weak self] in
-                    self?.seasons = newSeasons
-                }
-
-            } catch let error {
-                debugPrint(error.localizedDescription)
-            }
+        } catch let error {
+            debugPrint(error.localizedDescription)
+            displayAlert.toggle()
+            alertMessage = error.localizedDescription
         }
     }
 }

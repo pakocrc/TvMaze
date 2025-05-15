@@ -8,6 +8,7 @@
 import Combine
 import Foundation
 
+@MainActor
 final class ShowListViewModel: ObservableObject {
     @Published var tvShowList = [TvMazeShow]()
     @Published var searchTvShowList = [TvMazeShow]()
@@ -15,6 +16,8 @@ final class ShowListViewModel: ObservableObject {
     @Published var searchCriteria: String = ""
     @Published var isSearching = false
     @Published var selectedTvShow: TvMazeShow?
+    @Published var displayAlert = false
+    @Published var alertMessage = ""
 
     private var isLoading = false
     private var page = 0
@@ -25,10 +28,6 @@ final class ShowListViewModel: ObservableObject {
     init(networkManager: NetworkProtocol) {
         self.networkManager = networkManager
 
-        Task {
-            await fetchShowsList()
-        }
-
         bindPublishers()
     }
 
@@ -38,8 +37,8 @@ final class ShowListViewModel: ObservableObject {
             .filter({ $0.count > 3 })
             .sink(receiveValue: { [weak self] searchCriteria in
 
-                DispatchQueue.main.async {
-                    self?.searchShow(searchCriteria: searchCriteria)
+                Task {
+                    await self?.searchShow(searchCriteria: searchCriteria)
                 }
             }).store(in: &cancellables)
 
@@ -47,50 +46,50 @@ final class ShowListViewModel: ObservableObject {
             .dropFirst()
             .debounce(for: .seconds(0.2), scheduler: DispatchQueue.main)
             .sink { [weak self] isSearching in
+
                 if !isSearching {
                     self?.searchTvShowList.removeAll()
                 }
             }.store(in: &cancellables)
 
-        $tvShowList
-            .sink { shows in
-                print("Shows count:", shows.count)
-            }.store(in: &cancellables)
+//        $tvShowList
+//            .sink { shows in
+//                print("Shows count:", shows.count)
+//            }.store(in: &cancellables)
     }
 
-    @MainActor
-    func searchShow(searchCriteria: String) {
-        Task {
-            do {
-                isLoading = true
-                let searchTvMazeShowResult = try await networkManager.searchTvShow(searchCriteria: searchCriteria)
-                self.searchTvShowList = searchTvMazeShowResult.map({ $0.show })
-                isLoading = false
+    func searchShow(searchCriteria: String) async {
+        do {
+            isLoading = true
+            let searchTvMazeShowResult = try await networkManager.searchTvShow(searchCriteria: searchCriteria)
+            self.searchTvShowList = searchTvMazeShowResult.map({ $0.show })
+            isLoading = false
 
-            } catch let error {
-                debugPrint(error.localizedDescription)
-            }
+        } catch let error {
+            debugPrint(error.localizedDescription)
+            displayAlert.toggle()
+            alertMessage = error.localizedDescription
         }
     }
 
-    @MainActor
     func fetchShowsList() async {
+
         if !isLoading {
             do {
                 isLoading = true
-                let newTvShows = try await networkManager.fetchShowsList(page: page)
-                tvShowList.append(contentsOf: newTvShows)
+                try await tvShowList.append(contentsOf: networkManager.fetchShowsList(page: page))
                 refreshItem = tvShowList.last
                 page += 1
                 isLoading = false
 
             } catch let error {
                 debugPrint(error.localizedDescription)
+                displayAlert.toggle()
+                alertMessage = error.localizedDescription
             }
         }
     }
 
-    @MainActor
     func refreshShowsList() async {
         page = 0
         tvShowList.removeAll()

@@ -10,6 +10,9 @@ import Foundation
 final class ShowEpisodesViewModel: ObservableObject {
     @Published var seasonEpisodes = [TvMaseSeasonEpisodes]()
     @Published var selectedEpisode: TvMazeEpisode?
+    @Published var displayAlert = false
+    @Published var alertMessage = ""
+    @Published var isReloadEnabled = false
 
     let tvShow: TvMazeShow
     let seasons: [TvMazeSeason]
@@ -19,25 +22,23 @@ final class ShowEpisodesViewModel: ObservableObject {
         self.tvShow = tvShow
         self.seasons = seasons
         self.networkManager = networkManager
-
-        Task {
-            await fetchEpisodeList()
-        }
     }
 
     @MainActor
-    func fetchEpisodeList() {
-        Task {
-            do {
-                let episodes = try await networkManager.fetchEpisodeList(showId: self.tvShow.id)
+    func fetchEpisodeList() async {
 
-                self.seasonEpisodes = self.seasons.map({ season in
-                    return TvMaseSeasonEpisodes(season: season, episodes: episodes.filter({ $0.season == season.number }))
-                })
+        do {
+            let episodes = try await networkManager.fetchEpisodeList(showId: self.tvShow.id)
 
-            } catch let error {
-                debugPrint(error.localizedDescription)
-            }
+            seasonEpisodes = seasons.map({ season in
+                return TvMaseSeasonEpisodes(season: season, episodes: episodes.filter({ $0.season == season.number }))
+            })
+
+        } catch let error {
+            debugPrint(error.localizedDescription)
+            displayAlert.toggle()
+            isReloadEnabled = true
+            alertMessage = error.localizedDescription
         }
     }
 }

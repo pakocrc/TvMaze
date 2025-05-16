@@ -7,17 +7,6 @@
 
 import Foundation
 
-protocol NetworkProtocol {
-    func fetchShowsList(page: Int) async throws -> [TvMazeShow]
-    func fetchSeasonList(showId: String) async throws -> [TvMazeSeason]
-    func fetchEpisodeList(showId: String) async throws -> [TvMazeEpisode]
-    func searchTvShow(searchCriteria: String) async throws -> [SearchTvMazeShow]
-    func fetchCast(showId: String) async throws -> [TvMazeCast]
-    func fetchImage(url: String) async throws -> Data
-    func fetchPersonDetails(id: String) async throws -> TvMazePerson
-    func fetchShowImages(showId: String) async throws -> [TvMazeShowImage]
-}
-
 final class NetworkManager: NetworkProtocol {
     // MARK: - Private
     private let baseUrl = "https://api.tvmaze.com"
@@ -51,7 +40,7 @@ final class NetworkManager: NetworkProtocol {
         guard let url = URL(string: String("\(baseUrl)/shows/\(showId)/seasons")) else {
             throw NetworkError.invalidUrl
         }
-        
+
         do {
             let (data, response) = try await URLSession.shared.data(from: url)
 
@@ -72,7 +61,7 @@ final class NetworkManager: NetworkProtocol {
         guard let url = URL(string: String("\(baseUrl)/shows/\(showId)/episodes")) else {
             throw NetworkError.invalidUrl
         }
-        
+
         do {
             let (data, response) = try await URLSession.shared.data(from: url)
 

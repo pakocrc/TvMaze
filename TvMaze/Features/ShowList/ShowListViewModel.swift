@@ -8,7 +8,6 @@
 import Combine
 import Foundation
 
-@MainActor
 final class ShowListViewModel: ObservableObject {
     @Published var tvShowList = [TvMazeShow]()
     @Published var searchTvShowList = [TvMazeShow]()
@@ -18,6 +17,7 @@ final class ShowListViewModel: ObservableObject {
     @Published var selectedTvShow: TvMazeShow?
     @Published var displayAlert = false
     @Published var alertMessage = ""
+    @Published var isReloadEnabled = false
 
     private var isLoading = false
     private var page = 0
@@ -27,7 +27,6 @@ final class ShowListViewModel: ObservableObject {
 
     init(networkManager: NetworkProtocol) {
         self.networkManager = networkManager
-
         bindPublishers()
     }
 
@@ -58,20 +57,23 @@ final class ShowListViewModel: ObservableObject {
 //            }.store(in: &cancellables)
     }
 
+    @MainActor
     func searchShow(searchCriteria: String) async {
         do {
             isLoading = true
             let searchTvMazeShowResult = try await networkManager.searchTvShow(searchCriteria: searchCriteria)
-            self.searchTvShowList = searchTvMazeShowResult.map({ $0.show })
+            searchTvShowList = searchTvMazeShowResult.map({ $0.show })
             isLoading = false
 
         } catch let error {
             debugPrint(error.localizedDescription)
             displayAlert.toggle()
+            isReloadEnabled.toggle()
             alertMessage = error.localizedDescription
         }
     }
 
+    @MainActor
     func fetchShowsList() async {
 
         if !isLoading {
@@ -85,11 +87,13 @@ final class ShowListViewModel: ObservableObject {
             } catch let error {
                 debugPrint(error.localizedDescription)
                 displayAlert.toggle()
+                isReloadEnabled = true
                 alertMessage = error.localizedDescription
             }
         }
     }
 
+    @MainActor
     func refreshShowsList() async {
         page = 0
         tvShowList.removeAll()

@@ -10,6 +10,7 @@ import SwiftUI
 struct ShowImagesView: View {
     @StateObject var viewModel: ShowImagesViewModel
     @State var selectedImage: TvMazeShowImage?
+    @State private var isFirstTimeLoading = true
 
     private var columns: [GridItem] = [
         GridItem(.flexible(minimum: 50.0, maximum: 150.0), spacing: 10, alignment: .center),
@@ -23,33 +24,61 @@ struct ShowImagesView: View {
 
     var body: some View {
         ScrollView {
-            if viewModel.showImages.isEmpty {
-                ContentUnavailableView("Loading...", systemImage: "arrow.down.circle.dotted", description: Text("Loading Content"))
 
-            } else {
-                LazyVGrid(columns: columns) {
-                    ForEach(viewModel.showImages) { image in
+            LazyVGrid(columns: columns) {
+                ForEach(viewModel.showImages) { image in
 
-                        if let imageUrl = image.resolutions?.original?.url {
-
-                            CachedAsyncImage(stringUrl: imageUrl)
-                                .onTapGesture {
-                                    selectedImage = image
-                                }
-                        }
-                    }
-                }
-                .sheet(item: $selectedImage) { image in
                     if let imageUrl = image.resolutions?.original?.url {
-                        ImageFullView(title: viewModel.tvShow.name ?? "",
-                                      imageUrl: imageUrl)
+
+                        CachedAsyncImage(stringUrl: imageUrl)
+                            .onTapGesture {
+                                selectedImage = image
+                            }
                     }
                 }
             }
+            .sheet(item: $selectedImage) { image in
+                if let imageUrl = image.resolutions?.original?.url {
+                    ImageFullView(title: viewModel.tvShow.name ?? "",
+                                  imageUrl: imageUrl)
+                }
+            }
         }
+        .alert("Alert", isPresented: $viewModel.displayAlert, actions: {
+            Button("Close", role: .cancel) {
+                viewModel.displayAlert.toggle()
+            }
+        }, message: {
+            Text(viewModel.alertMessage)
+        })
         .task {
-            viewModel.fetchShowImages()
+            if isFirstTimeLoading {
+                isFirstTimeLoading.toggle()
+                await viewModel.fetchShowImages()
+            }
         }
+        .overlay(alignment: .top) {
+            if viewModel.showImages.isEmpty {
+ 
+                ContentUnavailableView {
+                    Label("Loading", systemImage: "arrow.down.circle.dotted")
+                } description: {
+                    Text("Retrieving information...")
+                } actions: {
+                    if viewModel.isReloadEnabled {
+                        Button {
+                            Task {
+                                await viewModel.fetchShowImages()
+                            }
+                        } label: {
+                            Text("Reload")
+                        }
+                    }
+                }
+
+            }
+        }
+
     }
 }
 

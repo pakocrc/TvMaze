@@ -27,7 +27,7 @@ final class ShowDetailsViewModel: ObservableObject {
     @MainActor
     func fetchEpisodeList() async {
         do {
-            self.seasons = try await networkManager.fetchSeasonList(showId: String(self.tvShow.id))
+            seasons = try await networkManager.fetchSeasonList(showId: String(tvShow.id))
 
         } catch let error {
             debugPrint(error.localizedDescription)

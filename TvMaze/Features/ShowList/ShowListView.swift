@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ShowListView: View {
     @StateObject var viewModel: ShowListViewModel
-    @State private var isFirstTimeLoading = false
+    @State private var isFirstTimeLoading = true
 
     init(networkManager: NetworkProtocol) {
         self._viewModel = StateObject(wrappedValue: ShowListViewModel(networkManager: networkManager))
@@ -18,44 +18,38 @@ struct ShowListView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                if viewModel.tvShowList.isEmpty {
-                    ContentUnavailableView("Loading",
-                                           systemImage: "arrow.down.circle.dotted",
-                                           description: Text("Fetching shows data..."))
-                } else {
-                    LazyVStack {
-                        if viewModel.isSearching {
-                            ForEach(viewModel.searchTvShowList) { show in
-                                Button {
-                                    viewModel.selectedTvShow = show
-                                } label: {
-                                    ShowRowView(show: show)
-                                        .frame(height: 200, alignment: .center)
-                                }
-                                .foregroundStyle(.primary)
-                                
-                                Divider()
-                                    .padding(.horizontal)
+                LazyVStack {
+                    if viewModel.isSearching {
+                        ForEach(viewModel.searchTvShowList) { show in
+                            Button {
+                                viewModel.selectedTvShow = show
+                            } label: {
+                                ShowRowView(show: show)
+                                    .frame(height: 200, alignment: .center)
                             }
-                            
-                        } else {
-                            ForEach(viewModel.tvShowList) { show in
-                                Button {
-                                    viewModel.selectedTvShow = show
-                                } label: {
-                                    ShowRowView(show: show)
-                                        .frame(height: 200, alignment: .center)
-                                        .task {
-                                            if show == viewModel.refreshItem {
-                                                await viewModel.fetchShowsList()
-                                            }
-                                        }
-                                }
-                                .foregroundStyle(.primary)
+                            .foregroundStyle(.primary)
 
-                                Divider()
-                                    .padding(.horizontal)
+                            Divider()
+                                .padding(.horizontal)
+                        }
+
+                    } else {
+                        ForEach(viewModel.tvShowList) { show in
+                            Button {
+                                viewModel.selectedTvShow = show
+                            } label: {
+                                ShowRowView(show: show)
+                                    .frame(height: 200, alignment: .center)
+                                    .task {
+                                        if show == viewModel.refreshItem {
+                                            await viewModel.fetchShowsList()
+                                        }
+                                    }
                             }
+                            .foregroundStyle(.primary)
+
+                            Divider()
+                                .padding(.horizontal)
                         }
                     }
                 }
@@ -71,8 +65,8 @@ struct ShowListView: View {
             }
             .navigationTitle("TvMaze")
             .task {
-                if !isFirstTimeLoading {
-                    isFirstTimeLoading = true
+                if isFirstTimeLoading {
+                    isFirstTimeLoading.toggle()
                     await viewModel.fetchShowsList()
                 }
             }
@@ -83,6 +77,32 @@ struct ShowListView: View {
             }, message: {
                 Text(viewModel.alertMessage)
             })
+            .overlay(alignment: .top) {
+
+                if viewModel.tvShowList.isEmpty {
+                    ContentUnavailableView {
+                        Label("Loading", systemImage: "arrow.down.circle.dotted")
+
+                    } description: {
+                        Text("Retrieving information...")
+
+                    } actions: {
+                        if viewModel.isReloadEnabled {
+                            Button {
+                                Task {
+                                    await viewModel.fetchShowsList()
+                                }
+                            } label: {
+                                Text("Reload")
+                            }
+                        }
+                    }
+
+                } else if viewModel.searchTvShowList.isEmpty && viewModel.isSearching {
+                    ContentUnavailableView.search
+
+                }
+            }
         }
     }
 }

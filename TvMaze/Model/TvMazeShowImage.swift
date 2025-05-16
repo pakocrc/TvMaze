@@ -11,6 +11,7 @@ enum TvMazeShowImageType: String, Codable {
     case background = "background"
     case banner = "banner"
     case poster = "poster"
+    case typography = "typography"
 }
 
 struct TvMazeShowImage: Codable, Identifiable {
@@ -30,10 +31,4 @@ struct Resolutions: Codable {
 struct TvMazeImageInfo: Codable {
     let url: String?
     let width, height: Int?
-}
-
-enum TypeEnum: String, Codable {
-    case background = "background"
-    case banner = "banner"
-    case poster = "poster"
 }

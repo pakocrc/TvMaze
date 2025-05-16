@@ -18,7 +18,6 @@ final class ShowListViewModelTests: XCTestCase {
         }
     }
 
-    @MainActor
     func testFetchTvShowListSuccessful() async throws {
         // given
 
@@ -29,7 +28,6 @@ final class ShowListViewModelTests: XCTestCase {
         XCTAssertTrue(sut.tvShowList.count > 0)
     }
 
-    @MainActor
     func testFetchTvShowListFail() async throws {
         // given
 
@@ -42,7 +40,6 @@ final class ShowListViewModelTests: XCTestCase {
         XCTAssertTrue(!sut.alertMessage.isEmpty)
     }
 
-    @MainActor
     func testSearchTvShows() async throws {
         // given
 
@@ -59,7 +56,6 @@ final class ShowListViewModelTests: XCTestCase {
         XCTAssertTrue(sut.searchTvShowList.count > 0)
     }
 
-    @MainActor
     func testSearchTvShowsFail() async throws {
         // given
 
@@ -71,7 +67,6 @@ final class ShowListViewModelTests: XCTestCase {
         XCTAssertTrue(!sut.alertMessage.isEmpty)
     }
 
-    @MainActor
     func testIsSearchingTvShows() async throws {
         // given
 
@@ -87,7 +82,6 @@ final class ShowListViewModelTests: XCTestCase {
         XCTAssertTrue(sut.searchTvShowList.count == 0)
     }
 
-    @MainActor
     func testRefreshTvShows() async throws {
         // given
 
@@ -101,7 +95,7 @@ final class ShowListViewModelTests: XCTestCase {
 
 struct ShowListViewModelTests2 {
 
-    @MainActor @Test
+    @Test
     func fetchTvShowList() async throws {
         // given
         let sut = ShowListViewModel(networkManager: NetworkManagerMock())

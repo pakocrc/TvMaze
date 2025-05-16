@@ -16,61 +16,86 @@ struct PersonDetailsView: View {
     }
 
     var body: some View {
-        if viewModel.person == nil {
-            ContentUnavailableView("Loading...", systemImage: "arrow.down.circle.dotted", description: Text("Loading Content"))
-                .task {
-                    await viewModel.fetchPersonDetails()
+        GeometryReader { proxy in
+            VStack(alignment: .leading) {
+                CachedAsyncImage(stringUrl: viewModel.person?.image?.medium ?? "")
+                    .frame(width: proxy.size.width, height: proxy.size.height / 2, alignment: .center)
+                    .onTapGesture {
+                        viewModel.isPresentingImageFullView.toggle()
+                    }
+                    .sheet(isPresented: $viewModel.isPresentingImageFullView) {
+                        ImageFullView(title: viewModel.person?.name ?? "",
+                                      imageUrl: viewModel.person?.image?.original ?? "")
+                    }
+
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Person Info")
+                        .font(.title)
+                        .foregroundStyle(.gray)
+
+                    HStack {
+                        Text("Country:")
+                            .font(.headline)
+                            .bold()
+
+                        Text("\(viewModel.person?.country?.name ?? "") \(getFlag(viewModel.person?.country?.code ?? ""))")
+                    }
+
+                    HStack {
+                        Text("Gender:")
+                            .font(.headline)
+                            .bold()
+
+                        Text(viewModel.person?.gender?.rawValue ?? "")
+                    }
+
+                    HStack {
+                        Text("Date of birth:")
+                            .font(.headline)
+                            .bold()
+
+                        Text(formatDateAndAge(viewModel.person?.birthday ?? ""))
+                    }
+
+                    if let url = viewModel.person?.url {
+                        Link("More information...", destination: URL(string: url)!)
+                    }
                 }
+                .padding()
+            }
+            .navigationTitle(viewModel.person?.name ?? "")
+            .alert("Alert", isPresented: $viewModel.displayAlert, actions: {
+                Button("Close", role: .cancel) {
+                    viewModel.displayAlert.toggle()
+                }
+            }, message: {
+                Text(viewModel.alertMessage)
+            })
+            .task {
+                await viewModel.fetchPersonDetails()
+            }
+            .overlay(alignment: .top) {
 
-        } else {
-            GeometryReader { proxy in
-                VStack(alignment: .leading) {
-                    CachedAsyncImage(stringUrl: viewModel.person?.image?.medium ?? "")
-                        .frame(width: proxy.size.width, height: proxy.size.height / 2, alignment: .center)
-                        .onTapGesture {
-                            viewModel.isPresentingImageFullView.toggle()
-                        }
-                        .sheet(isPresented: $viewModel.isPresentingImageFullView) {
-                            ImageFullView(title: viewModel.person?.name ?? "",
-                                          imageUrl: viewModel.person?.image?.original ?? "")
-                        }
+                if viewModel.person == nil {
+                    ContentUnavailableView {
+                        Label("Loading", systemImage: "arrow.down.circle.dotted")
 
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("Person Info")
-                            .font(.title)
-                            .foregroundStyle(.gray)
+                    } description: {
+                        Text("Retrieving information...")
 
-                        HStack {
-                            Text("Country:")
-                                .font(.headline)
-                                .bold()
+                    } actions: {
+                        if viewModel.isReloadEnabled {
+                            Button {
+                                Task {
+                                    await viewModel.fetchPersonDetails()
+                                }
+                            } label: {
 
-                            Text("\(viewModel.person?.country?.name ?? "") \(getFlag(viewModel.person?.country?.code ?? ""))")
-                        }
-
-                        HStack {
-                            Text("Gender:")
-                                .font(.headline)
-                                .bold()
-
-                            Text(viewModel.person?.gender?.rawValue ?? "")
-                        }
-
-                        HStack {
-                            Text("Date of birth:")
-                                .font(.headline)
-                                .bold()
-
-                            Text(formatDateAndAge(viewModel.person?.birthday ?? ""))
-                        }
-
-                        if let url = viewModel.person?.url {
-                            Link("More information...", destination: URL(string: url)!)
+                                Text("Reload")
+                            }
                         }
                     }
-                    .padding()
                 }
-                .navigationTitle(viewModel.person?.name ?? "")
             }
         }
     }

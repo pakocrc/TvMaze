@@ -8,4 +8,5 @@
 enum TvMazeGender: String, Codable {
     case female = "Female"
     case male = "Male"
+    case other = "Other"
 }

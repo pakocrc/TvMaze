@@ -80,7 +80,7 @@ struct ShowDetailsView: View {
                                 .font(.body)
                                 .bold()
 
-                            VStack {
+                            VStack(alignment: .leading) {
                                 ForEach(days) { day in
                                     HStack {
                                         Text(day.rawValue)

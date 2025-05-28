@@ -59,23 +59,12 @@ struct ShowImagesView: View {
         }
         .overlay(alignment: .top) {
             if viewModel.showImages.isEmpty {
- 
-                ContentUnavailableView {
-                    Label("Loading", systemImage: "arrow.down.circle.dotted")
-                } description: {
-                    Text("Retrieving information...")
-                } actions: {
-                    if viewModel.isReloadEnabled {
-                        Button {
-                            Task {
-                                await viewModel.fetchShowImages()
-                            }
-                        } label: {
-                            Text("Reload")
-                        }
-                    }
-                }
 
+                CustomContentUnavailableView(action: {
+                    Task {
+                        await viewModel.fetchShowImages()
+                    }
+                }, isReloadEnabled: $viewModel.isReloadEnabled)
             }
         }
 

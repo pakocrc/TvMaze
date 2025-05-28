@@ -80,23 +80,11 @@ struct ShowListView: View {
             .overlay(alignment: .top) {
 
                 if viewModel.tvShowList.isEmpty {
-                    ContentUnavailableView {
-                        Label("Loading", systemImage: "arrow.down.circle.dotted")
-
-                    } description: {
-                        Text("Retrieving information...")
-
-                    } actions: {
-                        if viewModel.isReloadEnabled {
-                            Button {
-                                Task {
-                                    await viewModel.fetchShowsList()
-                                }
-                            } label: {
-                                Text("Reload")
-                            }
+                    CustomContentUnavailableView(action: {
+                        Task {
+                            await viewModel.fetchShowsList()
                         }
-                    }
+                    }, isReloadEnabled: $viewModel.isReloadEnabled)
 
                 } else if viewModel.searchTvShowList.isEmpty && viewModel.isSearching {
                     ContentUnavailableView.search

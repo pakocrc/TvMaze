@@ -88,6 +88,7 @@ final class ShowListViewModel: ObservableObject {
                 debugPrint(error.localizedDescription)
                 displayAlert.toggle()
                 isReloadEnabled = true
+                isLoading = false
                 alertMessage = error.localizedDescription
             }
         }

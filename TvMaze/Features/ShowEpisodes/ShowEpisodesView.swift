@@ -59,21 +59,12 @@ struct ShowEpisodesView: View {
         .overlay(alignment: .top) {
 
             if viewModel.seasonEpisodes.isEmpty {
-                ContentUnavailableView {
-                    Label("Loading", systemImage: "arrow.down.circle.dotted")
-                } description: {
-                    Text("Retrieving information...")
-                } actions: {
-                    if viewModel.isReloadEnabled {
-                        Button {
-                            Task {
-                                await viewModel.fetchEpisodeList()
-                            }
-                        } label: {
-                            Text("Reload")
-                        }
+
+                CustomContentUnavailableView(action: {
+                    Task {
+                        await viewModel.fetchEpisodeList()
                     }
-                }
+                }, isReloadEnabled: $viewModel.isReloadEnabled)
             }
         }
     }

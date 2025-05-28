@@ -31,7 +31,7 @@ final class NetworkManager: NetworkProtocol {
             
         } catch let error {
             debugPrint("❌ Error:", error.localizedDescription)
-            throw NetworkError.decodingFailed
+            throw error
         }
     }
     
@@ -49,10 +49,10 @@ final class NetworkManager: NetworkProtocol {
             _ = try validateAsyncResponse(httpUrlResponse)
             
             return try JSONDecoder().decode([TvMazeSeason].self, from: data)
-            
+
         } catch let error {
             debugPrint("❌ Error:", error.localizedDescription)
-            throw NetworkError.decodingFailed
+            throw error
         }
     }
     
@@ -73,7 +73,7 @@ final class NetworkManager: NetworkProtocol {
             
         } catch let error {
             debugPrint("❌ Error:", error.localizedDescription)
-            throw NetworkError.decodingFailed
+            throw error
         }
     }
     
@@ -94,7 +94,7 @@ final class NetworkManager: NetworkProtocol {
             
         } catch let error {
             debugPrint("❌ Error:", error.localizedDescription)
-            throw NetworkError.decodingFailed
+            throw error
         }
     }
     
@@ -111,11 +111,17 @@ final class NetworkManager: NetworkProtocol {
 
             _ = try validateAsyncResponse(httpUrlResponse)
 
-            return try JSONDecoder().decode([TvMazeCast].self, from: data)
+            let cast = try JSONDecoder().decode([TvMazeCast].self, from: data)
+
+            if !cast.isEmpty {
+                return cast
+            }
+
+            throw NetworkError.emptyData
 
         } catch let error {
             debugPrint("❌ Error:", error.localizedDescription)
-            throw NetworkError.decodingFailed
+            throw error
         }
     }
 
@@ -135,7 +141,7 @@ final class NetworkManager: NetworkProtocol {
 
         } catch let error {
             debugPrint("❌ Error:", error.localizedDescription)
-            throw NetworkError.decodingFailed
+            throw error
         }
     }
 
@@ -155,7 +161,7 @@ final class NetworkManager: NetworkProtocol {
 
         } catch let error {
             debugPrint("❌ Error:", error.localizedDescription)
-            throw NetworkError.decodingFailed
+            throw error
         }
     }
 
@@ -176,7 +182,7 @@ final class NetworkManager: NetworkProtocol {
 
         } catch let error {
             debugPrint("❌ Error:", error.localizedDescription)
-            throw NetworkError.decodingFailed
+            throw error
         }
     }
 }

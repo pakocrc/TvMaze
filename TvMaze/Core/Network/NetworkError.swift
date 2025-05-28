@@ -11,6 +11,7 @@ enum NetworkError: Error {
     case invalidUrl
     case invalidResponse
     case invalidData
+    case emptyData
     case decodingFailed
     case clientError(Int)
     case serverError(Int)
@@ -26,6 +27,8 @@ extension NetworkError: LocalizedError {
                 return "Invalid response received from the server."
             case .invalidData:
                 return "Invalid data retrieved from the server."
+            case .emptyData:
+                return "Empty data was returned"
             case .decodingFailed:
                 return "Failed to decode the response data."
             case .clientError(let statusCode):

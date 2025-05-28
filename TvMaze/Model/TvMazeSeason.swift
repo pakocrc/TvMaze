@@ -14,7 +14,7 @@ struct TvMazeSeason: Codable, Identifiable {
     let name: String?
     let episodeOrder: Int?
     let premiereDate, endDate: String?
-    let network: TvMazeNetwork
+    let network: TvMazeNetwork?
     let image: TvMazeImage?
     let summary: String?
 

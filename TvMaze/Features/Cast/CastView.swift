@@ -48,23 +48,11 @@ struct CastView: View {
         .overlay(alignment: .top) {
             if viewModel.cast.isEmpty {
 
-                ContentUnavailableView {
-                    Label("Loading", systemImage: "arrow.down.circle.dotted")
-
-                } description: {
-                    Text("Retrieving information...")
-
-                } actions: {
-                    if viewModel.isReloadEnabled {
-                        Button {
-                            Task {
-                                await viewModel.fetchCast()
-                            }
-                        } label: {
-                            Text("Reload")
-                        }
+                CustomContentUnavailableView(action: {
+                    Task {
+                        await viewModel.fetchCast()
                     }
-                }
+                }, isReloadEnabled: $viewModel.isReloadEnabled)
             }
         }
     }

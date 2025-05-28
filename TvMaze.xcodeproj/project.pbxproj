@@ -48,6 +48,7 @@
 		8A9444282DB1C4A600797DD9 /* ShowDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9444272DB1C4A600797DD9 /* ShowDetailsView.swift */; };
 		8A94442B2DB1F6B700797DD9 /* ShowListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A94442A2DB1F6B700797DD9 /* ShowListView.swift */; };
 		8A94442D2DB1F6D900797DD9 /* ShowListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A94442C2DB1F6D900797DD9 /* ShowListViewModel.swift */; };
+		8AA68FA82DE7C9A5009F1FEF /* CustomContentUnavailableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA68FA72DE7C9A5009F1FEF /* CustomContentUnavailableView.swift */; };
 		8AB933532DB9EF7200812A3A /* TvMazeCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB933522DB9EF7200812A3A /* TvMazeCast.swift */; };
 		8AB933552DB9F11A00812A3A /* TvMazeCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB933542DB9F11A00812A3A /* TvMazeCharacter.swift */; };
 		8AB933572DB9F13600812A3A /* TvMazeLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AB933562DB9F13600812A3A /* TvMazeLinks.swift */; };
@@ -143,6 +144,7 @@
 		8A9444272DB1C4A600797DD9 /* ShowDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailsView.swift; sourceTree = "<group>"; };
 		8A94442A2DB1F6B700797DD9 /* ShowListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowListView.swift; sourceTree = "<group>"; };
 		8A94442C2DB1F6D900797DD9 /* ShowListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowListViewModel.swift; sourceTree = "<group>"; };
+		8AA68FA72DE7C9A5009F1FEF /* CustomContentUnavailableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomContentUnavailableView.swift; sourceTree = "<group>"; };
 		8AB933522DB9EF7200812A3A /* TvMazeCast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvMazeCast.swift; sourceTree = "<group>"; };
 		8AB933542DB9F11A00812A3A /* TvMazeCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvMazeCharacter.swift; sourceTree = "<group>"; };
 		8AB933562DB9F13600812A3A /* TvMazeLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvMazeLinks.swift; sourceTree = "<group>"; };
@@ -229,8 +231,9 @@
 		8A0CC7C52DB33C6A0014320F /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
-				8AF384132DC037F600EAE8B0 /* ImageFullView */,
 				8A96C6362DBA036600102FC7 /* CachedAsyncImage */,
+				8AA68FA72DE7C9A5009F1FEF /* CustomContentUnavailableView.swift */,
+				8AF384132DC037F600EAE8B0 /* ImageFullView */,
 				8ABF12DE2DD6E27D005DAE81 /* ReloadView.swift */,
 			);
 			path = UIComponents;
@@ -711,6 +714,7 @@
 				8AB933532DB9EF7200812A3A /* TvMazeCast.swift in Sources */,
 				8ABA36492DC586B300C93BFC /* ShowImagesView.swift in Sources */,
 				8A94441D2DB1AD8000797DD9 /* TvMazeShow.swift in Sources */,
+				8AA68FA82DE7C9A5009F1FEF /* CustomContentUnavailableView.swift in Sources */,
 				8AB933552DB9F11A00812A3A /* TvMazeCharacter.swift in Sources */,
 				8A9443E92DB1A18B00797DD9 /* TvMazeApp.swift in Sources */,
 				8A0CC7C72DB33C760014320F /* CachedAsyncImage.swift in Sources */,

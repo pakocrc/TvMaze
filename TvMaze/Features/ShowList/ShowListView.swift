@@ -60,6 +60,7 @@ struct ShowListView: View {
             .scrollTargetBehavior(.viewAligned)
             .searchable(text: $viewModel.searchCriteria,
                         isPresented: $viewModel.isSearching)
+            .accessibilityIdentifier("showListViewScrollView")
             .navigationDestination(item: $viewModel.selectedTvShow) { tvShow in
                 ShowDetailsView(tvShow: tvShow, networkManager: viewModel.networkManager)
             }

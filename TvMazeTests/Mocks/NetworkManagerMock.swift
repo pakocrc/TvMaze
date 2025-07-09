@@ -48,7 +48,7 @@ final class NetworkManagerMock: NetworkProtocol {
             return try JSONDecoder().decode([SearchTvMazeShow].self, from: data)
 
         } catch let error {
-            debugPrint("❌ Error \(error). Decode failed of data in", path)
+            debugPrint("❌ [LOG] Error path: \(path). Error description: \(error)")
             throw error
         }
     }
@@ -68,8 +68,8 @@ final class NetworkManagerMock: NetworkProtocol {
             return try JSONDecoder().decode([TvMazeSeason].self, from: data)
 
         } catch let error {
-            debugPrint("❌ Error \(error). Decode failed of data in", path)
-            throw NetworkError.invalidData
+            debugPrint("❌ [LOG] Error path: \(path). Error description: \(error)")
+            throw error
         }
     }
 
@@ -88,8 +88,8 @@ final class NetworkManagerMock: NetworkProtocol {
             return try JSONDecoder().decode([TvMazeEpisode].self, from: data)
 
         } catch let error {
-            debugPrint("❌ Error \(error). Decode failed of data in", path)
-            throw NetworkError.invalidData
+            debugPrint("❌ [LOG] Error path: \(path). Error description: \(error)")
+            throw error
         }
     }
 
@@ -108,8 +108,8 @@ final class NetworkManagerMock: NetworkProtocol {
             return try JSONDecoder().decode([TvMazeCast].self, from: data)
 
         } catch let error {
-            debugPrint("❌ Error \(error). Decode failed of data in", path)
-            throw NetworkError.invalidData
+            debugPrint("❌ [LOG] Error path: \(path). Error description: \(error)")
+            throw error
         }
     }
 
@@ -133,8 +133,8 @@ final class NetworkManagerMock: NetworkProtocol {
             return try JSONDecoder().decode(TvMazePerson.self, from: data)
 
         } catch let error {
-            debugPrint("❌ Error \(error). Decode failed of data in", path)
-            throw NetworkError.decodingFailed
+            debugPrint("❌ [LOG] Error path: \(path). Error description: \(error)")
+            throw error
         }
     }
 
@@ -153,8 +153,8 @@ final class NetworkManagerMock: NetworkProtocol {
             return try JSONDecoder().decode([TvMazeShowImage].self, from: data)
 
         } catch let error {
-            debugPrint("❌ Error \(error). Decode failed of data in", path)
-            throw NetworkError.decodingFailed
+            debugPrint("❌ [LOG] Error path: \(path). Error description: \(error)")
+            throw error
         }
     }
 }
